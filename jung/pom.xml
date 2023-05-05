@@ -3,14 +3,76 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>potatohd.jung</groupId>
     <artifactId>jung</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <parent>
+        <groupId>potatohd.sneps.gui</groupId>
+        <artifactId>sneps-test</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>colt</groupId>
+            <artifactId>colt</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${lib.path}/SnepsGUIMods/JungFiles/Colt/lib/colt.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>colt</groupId>
+            <artifactId>concurrent</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${lib.path}/SnepsGUIMods/JungFiles/Colt/lib/concurrent.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>commons</groupId>
+            <artifactId>collections</artifactId>
+            <version>3.2</version>
+            <scope>system</scope>
+            <systemPath>${lib.path}/SnepsGUIMods/JungFiles/Commons/commons-collections-3.2.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>commons</groupId>
+            <artifactId>collections-testframework</artifactId>
+            <version>3.2</version>
+            <scope>system</scope>
+            <systemPath>${lib.path}/SnepsGUIMods/JungFiles/Commons/commons-collections-testframework-3.2.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>xerxes</groupId>
+            <artifactId>resolver</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${lib.path}/SnepsGUIMods/JungFiles/Xerxes/resolver.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>xerxes</groupId>
+            <artifactId>impl</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${lib.path}/SnepsGUIMods/JungFiles/Xerxes/xercesImpl.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>xerxes</groupId>
+            <artifactId>samples</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${lib.path}/SnepsGUIMods/JungFiles/Xerxes/xercesSamples.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>xerxes</groupId>
+            <artifactId>xml-apis</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${lib.path}/SnepsGUIMods/JungFiles/Xerxes/xml-apis.jar</systemPath>
+        </dependency>
+    </dependencies>
 
 </project>

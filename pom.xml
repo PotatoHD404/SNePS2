@@ -30,69 +30,9 @@
         </plugins>
     </build>
     <properties>
+        <lib.path>${project.basedir}/../lib</lib.path>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <dependencies>
-        <dependency>
-            <groupId>colt</groupId>
-            <artifactId>colt1</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/SnepsGUIMods/JungFiles/Colt/lib/colt.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>colt</groupId>
-            <artifactId>concurrent1</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/SnepsGUIMods/JungFiles/Colt/lib/concurrent.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>commons</groupId>
-            <artifactId>collections</artifactId>
-            <version>3.2</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/SnepsGUIMods/JungFiles/Commons/commons-collections-3.2.jar
-            </systemPath>
-        </dependency>
-        <dependency>
-            <groupId>commons</groupId>
-            <artifactId>collections-testframework</artifactId>
-            <version>3.2</version>
-            <scope>system</scope>
-            <systemPath>
-                ${project.basedir}/lib/SnepsGUIMods/JungFiles/Commons/commons-collections-testframework-3.2.jar
-            </systemPath>
-        </dependency>
-        <dependency>
-            <groupId>xerxes</groupId>
-            <artifactId>resolver</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/SnepsGUIMods/JungFiles/Xerxes/resolver.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>xerxes</groupId>
-            <artifactId>impl</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/SnepsGUIMods/JungFiles/Xerxes/xercesImpl.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>xerxes</groupId>
-            <artifactId>samples</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/SnepsGUIMods/JungFiles/Xerxes/xercesSamples.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>xerxes</groupId>
-            <artifactId>xml-apis</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/SnepsGUIMods/JungFiles/Xerxes/xml-apis.jar</systemPath>
-        </dependency>
-    </dependencies>
 </project>

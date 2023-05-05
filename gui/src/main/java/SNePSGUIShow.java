@@ -6,6 +6,7 @@ import com.franz.jlinker.LispConnector;
 import com.sun.jimi.core.JimiException;
 import edu.uci.ics.jung.graph.ArchetypeEdge;
 import edu.uci.ics.jung.graph.ArchetypeVertex;
+import edu.uci.ics.jung.graph.impl.SparseGraph;
 import edu.uci.ics.jung.graph.decorators.EdgeShape;
 import edu.uci.ics.jung.graph.decorators.EdgeStringer;
 import edu.uci.ics.jung.graph.decorators.VertexStringer;
@@ -32,10 +33,11 @@ import java.net.HttpURLConnection;
 import java.net.Socket;
 import java.net.URL;
 import java.util.ArrayList;
+import com.google.gson.Gson;
 
 
 public class SNePSGUIShow extends javax.swing.JFrame {
-
+    static Gson gson = new Gson();
     private JFileChooser fc;
     private JFileChooser imageChooser;
     private SparseGraph testGraph;
@@ -396,8 +398,9 @@ public class SNePSGUIShow extends javax.swing.JFrame {
 
     public void displayNetwork(SparseGraph dsg) throws IOException {
         try {
-            byte[] serializedData = dsg.serializeObject();
-            sendSerializedData(serializedData);
+//            byte[] serializedData = dsg.serializeObject();
+
+            sendSerializedData(gson.toJson(dsg).getBytes());
         } catch (IOException e) {
             System.err.println("Failed to serialize MySparseGraph object: " + e.getMessage());
         }
@@ -691,11 +694,11 @@ public class SNePSGUIShow extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new SNePSGUIShow(false).setVisible(false);
-//            }
-//        });
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new SNePSGUIShow(false).setVisible(true);
+            }
+        });
 
     }
 

@@ -11,6 +11,7 @@
 */
 package edu.uci.ics.jung.graph.impl;
 
+import java.io.*;
 import java.util.Collection;
 
 
@@ -24,19 +25,30 @@ import java.util.Collection;
  * @see SparseVertex
  * @author Joshua O'Madadhain
  */
-public class SparseGraph extends AbstractSparseGraph
-{        
-    public SparseGraph()
-    {
-        super();
-    }    
-    
-    /**
-     * Creates a new SparseGraph and adds the specified edge constraints.
-     */
-    public SparseGraph(Collection edge_constraints)
-    {
-        super();
-        getEdgeConstraints().addAll(edge_constraints);
+public class SparseGraph extends AbstractSparseGraph implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    public SparseGraph() {
+    }
+
+    public SparseGraph(Collection edge_constraints) {
+        this.getEdgeConstraints().addAll(edge_constraints);
+    }
+
+
+    public byte[] serializeObject() throws IOException {
+        try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
+             ObjectOutputStream oos = new ObjectOutputStream(baos)) {
+            oos.writeObject(this);
+            return baos.toByteArray();
+        }
+    }
+
+    public static SparseGraph deserializeObject(byte[] serializedData) throws IOException, ClassNotFoundException {
+        try (ByteArrayInputStream bais = new ByteArrayInputStream(serializedData);
+             ObjectInputStream ois = new ObjectInputStream(bais)) {
+            return (SparseGraph) ois.readObject();
+        }
     }
 }

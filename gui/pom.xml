@@ -3,9 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>potatohd.sneps.gui</groupId>
     <artifactId>gui</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <parent>
+        <groupId>potatohd.sneps.gui</groupId>
+        <artifactId>sneps-test</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
     <build>
         <plugins>
             <plugin>
@@ -31,6 +36,11 @@
     </properties>
     <dependencies>
         <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+        <dependency>
             <groupId>io.javalin</groupId>
             <artifactId>javalin</artifactId>
             <version>5.5.0</version>
@@ -41,102 +51,101 @@
             <version>2.0.7</version>
         </dependency>
         <dependency>
-            <groupId>edu.uci.ics</groupId>
-            <artifactId>jung</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/../lib/SnepsGUIMods/JungFiles/JUNG/jung-1.7.6/jung-1.7.6.jar</systemPath>
-        </dependency>
-        <dependency>
             <groupId>com.franz.jlinker</groupId>
             <artifactId>JavaLinkDist</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/../lib/Jlinker/jlinker.jar</systemPath>
+            <systemPath>${lib.path}/Jlinker/jlinker.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>edu.uci.ics</groupId>
             <artifactId>screencap</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/../lib/SnepsGUIMods/EPSComponentDump/dump.jar</systemPath>
+            <systemPath>${lib.path}/SnepsGUIMods/EPSComponentDump/dump.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>jimi</groupId>
             <artifactId>main</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/../lib/SnepsGUIMods/Jimi/jimi-1.0.jar</systemPath>
+            <systemPath>${lib.path}/SnepsGUIMods/Jimi/jimi-1.0.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>colt</groupId>
             <artifactId>colt</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/../lib/SnepsGUIMods/JungFiles/Colt/lib/colt.jar</systemPath>
+            <systemPath>${lib.path}/SnepsGUIMods/JungFiles/Colt/lib/colt.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>colt</groupId>
             <artifactId>concurrent</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/../lib/SnepsGUIMods/JungFiles/Colt/lib/concurrent.jar</systemPath>
+            <systemPath>${lib.path}/SnepsGUIMods/JungFiles/Colt/lib/concurrent.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>commons</groupId>
             <artifactId>collections</artifactId>
             <version>3.2</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/../lib/SnepsGUIMods/JungFiles/Commons/commons-collections-3.2.jar</systemPath>
+            <systemPath>${lib.path}/SnepsGUIMods/JungFiles/Commons/commons-collections-3.2.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>commons</groupId>
             <artifactId>collections-testframework</artifactId>
             <version>3.2</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/../lib/SnepsGUIMods/JungFiles/Commons/commons-collections-testframework-3.2.jar</systemPath>
+            <systemPath>${lib.path}/SnepsGUIMods/JungFiles/Commons/commons-collections-testframework-3.2.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>xerxes</groupId>
             <artifactId>resolver</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/../lib/SnepsGUIMods/JungFiles/Xerxes/resolver.jar</systemPath>
+            <systemPath>${lib.path}/SnepsGUIMods/JungFiles/Xerxes/resolver.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>xerxes</groupId>
             <artifactId>impl</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/../lib/SnepsGUIMods/JungFiles/Xerxes/xercesImpl.jar</systemPath>
+            <systemPath>${lib.path}/SnepsGUIMods/JungFiles/Xerxes/xercesImpl.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>xerxes</groupId>
             <artifactId>samples</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/../lib/SnepsGUIMods/JungFiles/Xerxes/xercesSamples.jar</systemPath>
+            <systemPath>${lib.path}/SnepsGUIMods/JungFiles/Xerxes/xercesSamples.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>xerxes</groupId>
             <artifactId>xml-apis</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/../lib/SnepsGUIMods/JungFiles/Xerxes/xml-apis.jar</systemPath>
+            <systemPath>${lib.path}/SnepsGUIMods/JungFiles/Xerxes/xml-apis.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>layout</groupId>
             <artifactId>absolute</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/../lib/AbsoluteLayout.jar</systemPath>
+            <systemPath>${lib.path}/AbsoluteLayout.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>layout</groupId>
             <artifactId>swing</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/../lib/swing-layout-1.0.jar</systemPath>
+            <systemPath>${lib.path}/swing-layout-1.0.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>potatohd.sneps.gui</groupId>
+            <artifactId>jung</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
