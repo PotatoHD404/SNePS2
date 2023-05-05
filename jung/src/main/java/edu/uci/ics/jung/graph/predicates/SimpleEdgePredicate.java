@@ -13,6 +13,8 @@ package edu.uci.ics.jung.graph.predicates;
 
 import edu.uci.ics.jung.graph.ArchetypeEdge;
 
+import java.io.Serializable;
+
 /**
  * A predicate that tests to see whether a specified edge is 
  * "simple" (neither parallel to any edge nor a self-loop).
@@ -21,8 +23,7 @@ import edu.uci.ics.jung.graph.ArchetypeEdge;
  * 
  * @author Joshua O'Madadhain
  */
-public class SimpleEdgePredicate extends EdgePredicate
-{
+public class SimpleEdgePredicate extends EdgePredicate implements Serializable {
     private static SimpleEdgePredicate instance;
     private static final String message = "SimpleEdgePredicate";
 

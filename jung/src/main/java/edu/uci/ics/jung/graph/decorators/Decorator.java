@@ -11,11 +11,13 @@ package edu.uci.ics.jung.graph.decorators;
 
 import edu.uci.ics.jung.utils.UserDataContainer;
 
+import java.io.Serializable;
+
 /**
  * Abstract decorator for cases where attributes are to be stored along with the graph/edge/vertex which they describe
  * @author Scott White
  */
-public abstract class Decorator {
+public abstract class Decorator implements Serializable {
     private Object mKey;
     private UserDataContainer.CopyAction mCopyAction;
 

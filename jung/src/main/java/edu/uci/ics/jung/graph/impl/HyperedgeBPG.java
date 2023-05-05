@@ -12,6 +12,7 @@
  */
 package edu.uci.ics.jung.graph.impl;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import edu.uci.ics.jung.graph.*;
@@ -25,7 +26,7 @@ import edu.uci.ics.jung.graph.*;
  * @see SetHyperedge
  * @see ListHyperedge
  */
-public class HyperedgeBPG extends AbstractHyperUnitBPG implements Hyperedge{
+public class HyperedgeBPG extends AbstractHyperUnitBPG implements Hyperedge, Serializable {
 
 	public HyperedgeBPG() {
 	}

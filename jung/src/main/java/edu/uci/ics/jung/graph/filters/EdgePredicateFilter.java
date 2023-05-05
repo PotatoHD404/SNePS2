@@ -17,6 +17,8 @@ import org.apache.commons.collections.Predicate;
 import edu.uci.ics.jung.graph.Edge;
 import edu.uci.ics.jung.graph.predicates.EdgePredicate;
 
+import java.io.Serializable;
+
 
 /**
  * This is a simple Edge filter that accepts the edges which its 
@@ -24,7 +26,7 @@ import edu.uci.ics.jung.graph.predicates.EdgePredicate;
  * 
  * @author danyelf
  */
-public class EdgePredicateFilter extends GeneralEdgeAcceptFilter {
+public class EdgePredicateFilter extends GeneralEdgeAcceptFilter implements Serializable {
     
 //    protected EdgePredicate predicate;
     protected Predicate predicate;

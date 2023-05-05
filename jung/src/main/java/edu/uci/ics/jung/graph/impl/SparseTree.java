@@ -15,6 +15,8 @@ import edu.uci.ics.jung.graph.Vertex;
 import edu.uci.ics.jung.graph.predicates.TreePredicate;
 import edu.uci.ics.jung.utils.UserData;
 
+import java.io.Serializable;
+
 /**
  * An implementation of <code>Graph</code> that consists of a 
  * <code>Vertex</code> set and a <code>DirectedEdge</code> set.
@@ -38,7 +40,7 @@ import edu.uci.ics.jung.utils.UserData;
  * @see DirectedSparseEdge
  */
 public class SparseTree extends SparseGraph
-	implements DirectedGraph {
+	implements DirectedGraph, Serializable {
 
     protected Vertex mRoot;
     public static final Object SPARSE_ROOT_KEY = "edu.uci.ics.jung.graph.impl.SparseTree.RootKey";

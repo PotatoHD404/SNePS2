@@ -17,6 +17,8 @@ import org.apache.commons.collections.Predicate;
 import edu.uci.ics.jung.graph.Vertex;
 import edu.uci.ics.jung.graph.predicates.VertexPredicate;
 
+import java.io.Serializable;
+
 
 /**
  * This is a simple Vertex filter that accepts the vertices which its 
@@ -24,7 +26,7 @@ import edu.uci.ics.jung.graph.predicates.VertexPredicate;
  * 
  * @author danyelf
  */
-public class VertexPredicateFilter extends GeneralVertexAcceptFilter {
+public class VertexPredicateFilter extends GeneralVertexAcceptFilter implements Serializable {
     
 //    protected VertexPredicate predicate;
     protected Predicate predicate;

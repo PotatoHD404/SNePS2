@@ -11,6 +11,7 @@
  */
 package edu.uci.ics.jung.graph.event;
 
+import java.io.Serializable;
 import java.util.*;
 
 import edu.uci.ics.jung.graph.*;
@@ -21,7 +22,7 @@ import edu.uci.ics.jung.graph.*;
  * 
  * @author danyelf
  */
-public class GraphListenerHandler {
+public class GraphListenerHandler implements Serializable {
 
 	private ArchetypeGraph mGraph;
 

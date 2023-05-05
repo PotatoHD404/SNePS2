@@ -11,11 +11,13 @@ package edu.uci.ics.jung.graph.predicates;
 
 import org.apache.commons.collections.Predicate;
 
+import java.io.Serializable;
+
 
 /**
  * @author Joshua O'Madadhain
  */
-public abstract class GPredicate implements Predicate {
+public abstract class GPredicate implements Predicate, Serializable {
 
     public boolean isInitializationPredicate = false;
 

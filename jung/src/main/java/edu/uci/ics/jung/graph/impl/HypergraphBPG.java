@@ -12,6 +12,7 @@
  */
 package edu.uci.ics.jung.graph.impl;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -44,7 +45,7 @@ import edu.uci.ics.jung.utils.UserDataContainer;
  * @deprecated As of version 1.7, replaced by <code>SetHypergraph</code>.
  * @see SetHypergraph
  */
-public class HypergraphBPG extends AbstractArchetypeGraph implements Hypergraph {
+public class HypergraphBPG extends AbstractArchetypeGraph implements Hypergraph, Serializable {
 
 	protected BipartiteGraph bpg;
 

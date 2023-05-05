@@ -13,8 +13,10 @@ package edu.uci.ics.jung.graph.decorators;
 
 import edu.uci.ics.jung.graph.Vertex;
 
+import java.io.Serializable;
 
-public class ConstantVertexSizeFunction implements VertexSizeFunction
+
+public class ConstantVertexSizeFunction implements VertexSizeFunction, Serializable
 {
     private int size;
     

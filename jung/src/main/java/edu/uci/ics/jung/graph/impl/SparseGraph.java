@@ -27,7 +27,7 @@ import java.util.Collection;
  */
 public class SparseGraph extends AbstractSparseGraph implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+//    private static final long serialVersionUID = 1L;
 
     public SparseGraph() {
     }

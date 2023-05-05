@@ -11,6 +11,7 @@
 */
 package edu.uci.ics.jung.graph.predicates;
 
+import java.io.Serializable;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -41,8 +42,7 @@ import edu.uci.ics.jung.utils.Pair;
  * 
  * @author Joshua O'Madadhain
  */
-public class ParallelEdgePredicate extends EdgePredicate
-{
+public class ParallelEdgePredicate extends EdgePredicate implements Serializable {
     private static ParallelEdgePredicate instance;
     private static final String message = "ParallelEdgePredicate";
     

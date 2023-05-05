@@ -13,13 +13,15 @@ package edu.uci.ics.jung.graph.decorators;
 
 import edu.uci.ics.jung.graph.Vertex;
 
+import java.io.Serializable;
+
 /**
  * Provides vertex sizes that are spaced proportionally between 
  * min_size and max_size depending on 
  * 
  * @author Joshua O'Madadhain
  */
-public class InterpolatingVertexSizeFunction implements VertexSizeFunction
+public class InterpolatingVertexSizeFunction implements VertexSizeFunction, Serializable
 {
     protected double min;
     protected double max;

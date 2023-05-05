@@ -13,6 +13,7 @@
  */
 package edu.uci.ics.jung.graph.decorators;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,7 +38,7 @@ import edu.uci.ics.jung.utils.UserData;
  * per-Graph.
  *
  */
-public class EdgeWeightLabeller implements NumberEdgeValue {
+public class EdgeWeightLabeller implements NumberEdgeValue, Serializable {
 
 	/**
 	 * The UserData key that stores edge weights.

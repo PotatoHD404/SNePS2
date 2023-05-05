@@ -13,6 +13,8 @@ package edu.uci.ics.jung.graph.predicates;
 
 import edu.uci.ics.jung.graph.ArchetypeEdge;
 
+import java.io.Serializable;
+
 
 /**
  * A predicate that checks to see whether an edge's user
@@ -20,8 +22,7 @@ import edu.uci.ics.jung.graph.ArchetypeEdge;
  * the constructor-specified (key,datum) pair.  This predicate
  * may be used as a constraint.
  */
-public class UserDatumEdgePredicate extends EdgePredicate
-{
+public class UserDatumEdgePredicate extends EdgePredicate implements Serializable {
     public static final String message = "UserDatumEdgePredicate: ";
     private Object datum;
     private Object key;

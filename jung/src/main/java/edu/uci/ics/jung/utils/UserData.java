@@ -7,6 +7,7 @@
  */
 package edu.uci.ics.jung.utils;
 
+import java.io.Serializable;
 import java.util.Iterator;
 
 /**
@@ -50,7 +51,7 @@ import java.util.Iterator;
  * the currect data is shared or not. This flag is assigned when the data is
  * added.
  */
-public abstract class UserData implements UserDataContainer {
+public abstract class UserData implements UserDataContainer, Serializable {
 
     /**
      * @see Object#toString()

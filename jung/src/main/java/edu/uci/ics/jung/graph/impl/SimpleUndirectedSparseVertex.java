@@ -11,6 +11,7 @@
  */
 package edu.uci.ics.jung.graph.impl;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -39,8 +40,7 @@ import edu.uci.ics.jung.graph.predicates.ParallelEdgePredicate;
  * @see UndirectedEdge
  */
 
-public class SimpleUndirectedSparseVertex extends AbstractSparseVertex
-{
+public class SimpleUndirectedSparseVertex extends AbstractSparseVertex implements Serializable {
     /**
      * A map of the neighbors of this vertex to its incident edges.
      * Used to speed up <code>findEdge(Vertex)</code>.

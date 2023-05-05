@@ -11,6 +11,7 @@
  */
 package edu.uci.ics.jung.graph.impl;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -26,7 +27,7 @@ import edu.uci.ics.jung.graph.ArchetypeVertex;
  * 
  * @author Joshua O'Madadhain
  */
-public abstract class AbstractArchetypeVertex extends AbstractElement implements ArchetypeVertex
+public abstract class AbstractArchetypeVertex extends AbstractElement implements ArchetypeVertex, Serializable
 {
     /**
      * 

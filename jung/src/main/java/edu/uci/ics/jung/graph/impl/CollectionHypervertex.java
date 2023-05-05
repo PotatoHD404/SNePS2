@@ -11,6 +11,7 @@
  */
 package edu.uci.ics.jung.graph.impl;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -22,8 +23,7 @@ import edu.uci.ics.jung.graph.Hyperedge;
  * 
  * @author Joshua O'Madadhain
  */
-public abstract class CollectionHypervertex extends AbstractHypervertex
-{
+public abstract class CollectionHypervertex extends AbstractHypervertex implements Serializable {
     protected Collection incident_edges;
     
     /**

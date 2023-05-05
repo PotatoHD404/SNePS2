@@ -11,6 +11,7 @@
  */
 package edu.uci.ics.jung.graph.impl;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Iterator;
 
@@ -37,7 +38,7 @@ import edu.uci.ics.jung.utils.SubsetManager;
  * 
  * @author Joshua O'Madadhain
  */
-public class KPartiteSparseGraph extends SparseGraph implements KPartiteGraph
+public class KPartiteSparseGraph extends SparseGraph implements KPartiteGraph, Serializable
 {
     protected Collection partitions;
 

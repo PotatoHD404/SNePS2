@@ -16,6 +16,7 @@ import java.awt.geom.Ellipse2D;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.Line2D;
 import java.awt.geom.QuadCurve2D;
+import java.io.Serializable;
 
 import org.apache.commons.collections.Predicate;
 
@@ -35,7 +36,7 @@ import edu.uci.ics.jung.visualization.ArrowFactory;
  *  
  * @author Tom Nelson
  */
-public class EdgeShape  {
+public class EdgeShape implements Serializable {
     
     /**
      * a convenience instance for other edge shapes to use

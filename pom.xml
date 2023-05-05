@@ -7,6 +7,7 @@
     <modules>
         <module>gui</module>
         <module>jung</module>
+        <module>api</module>
     </modules>
     <groupId>potatohd.sneps.gui</groupId>
     <artifactId>sneps-test</artifactId>

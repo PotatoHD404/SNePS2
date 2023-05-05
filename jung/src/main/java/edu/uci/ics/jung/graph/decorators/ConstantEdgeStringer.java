@@ -13,13 +13,15 @@ package edu.uci.ics.jung.graph.decorators;
 
 import edu.uci.ics.jung.graph.ArchetypeEdge;
 
+import java.io.Serializable;
+
 /**
  * Returns the specified label for all edges.  Useful for
  * specifying "no label".
  * 
  * @author Joshua O'Madadhain
  */
-public class ConstantEdgeStringer implements EdgeStringer
+public class ConstantEdgeStringer implements EdgeStringer, Serializable
 {
     protected String label;
     

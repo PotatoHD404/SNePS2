@@ -11,13 +11,14 @@ package edu.uci.ics.jung.graph.predicates;
 
 import edu.uci.ics.jung.graph.ArchetypeVertex;
 
+import java.io.Serializable;
+
 /**
  * Returns true iff the vertex contains the specified user data key.
  *  
  * @author Joshua O'Madadhain
  */
-public class ContainsUserDataKeyVertexPredicate extends VertexPredicate
-{
+public class ContainsUserDataKeyVertexPredicate extends VertexPredicate implements Serializable {
     protected Object key;
     
     public ContainsUserDataKeyVertexPredicate(Object key)

@@ -12,6 +12,7 @@
  */
 package edu.uci.ics.jung.graph.decorators;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import edu.uci.ics.jung.graph.ArchetypeVertex;
@@ -27,7 +28,7 @@ import edu.uci.ics.jung.utils.UserData;
  * 
  * @author danyelf
  */
-public class ToStringLabeller extends StringLabeller {
+public class ToStringLabeller extends StringLabeller implements Serializable {
 
 	/**
 	 * This method is not meaningful; it throws an IllegalArgumentException

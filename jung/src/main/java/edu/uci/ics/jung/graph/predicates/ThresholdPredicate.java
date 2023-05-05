@@ -11,12 +11,14 @@ package edu.uci.ics.jung.graph.predicates;
 
 import org.apache.commons.collections.Predicate;
 
+import java.io.Serializable;
+
 /**
  * A predicate which passes Numbers whose value satisfies a threshold requirement.
  *  
  * @author Joshua O'Madadhain
  */
-public class ThresholdPredicate implements Predicate
+public class ThresholdPredicate implements Predicate, Serializable
 {
     protected double threshold;
     protected boolean greater_equal;

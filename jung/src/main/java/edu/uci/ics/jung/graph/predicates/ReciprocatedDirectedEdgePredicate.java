@@ -9,6 +9,7 @@
  */
 package edu.uci.ics.jung.graph.predicates;
 
+import java.io.Serializable;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -24,8 +25,7 @@ import edu.uci.ics.jung.graph.DirectedEdge;
  *  
  * @author Joshua O'Madadhain
  */
-public class ReciprocatedDirectedEdgePredicate extends EdgePredicate
-{
+public class ReciprocatedDirectedEdgePredicate extends EdgePredicate implements Serializable {
     private static ReciprocatedDirectedEdgePredicate instance;
     private static final String message = "ReciprocatedDirectedEdgePredicate";
     

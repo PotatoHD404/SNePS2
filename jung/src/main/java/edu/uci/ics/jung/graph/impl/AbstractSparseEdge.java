@@ -9,6 +9,7 @@
 */
 package edu.uci.ics.jung.graph.impl;
 
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -41,7 +42,7 @@ import edu.uci.ics.jung.utils.Pair;
  * @see AbstractSparseGraph
  * @see AbstractSparseVertex
  */
-public abstract class AbstractSparseEdge extends AbstractArchetypeEdge implements Edge
+public abstract class AbstractSparseEdge extends AbstractArchetypeEdge implements Edge, Serializable
 {
     /**
      * One of the two incident vertices of this edge.  If this edge is

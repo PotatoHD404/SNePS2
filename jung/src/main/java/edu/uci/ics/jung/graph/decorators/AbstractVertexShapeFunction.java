@@ -13,13 +13,14 @@ package edu.uci.ics.jung.graph.decorators;
 
 import edu.uci.ics.jung.visualization.VertexShapeFactory;
 
+import java.io.Serializable;
 
 
 /**
  * 
  * @author Joshua O'Madadhain
  */
-public abstract class AbstractVertexShapeFunction implements SettableVertexShapeFunction
+public abstract class AbstractVertexShapeFunction implements SettableVertexShapeFunction, Serializable
 {
     protected VertexSizeFunction vsf;
     protected VertexAspectRatioFunction varf;

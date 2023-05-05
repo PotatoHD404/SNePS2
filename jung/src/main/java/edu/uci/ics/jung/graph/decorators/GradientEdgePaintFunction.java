@@ -15,6 +15,7 @@ import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Paint;
 import java.awt.geom.Point2D;
+import java.io.Serializable;
 
 import edu.uci.ics.jung.graph.Edge;
 import edu.uci.ics.jung.graph.UndirectedEdge;
@@ -34,8 +35,7 @@ import edu.uci.ics.jung.visualization.transform.LayoutTransformer;
  * 
  * @author Joshua O'Madadhain
  */
-public class GradientEdgePaintFunction extends AbstractEdgePaintFunction
-{
+public class GradientEdgePaintFunction extends AbstractEdgePaintFunction implements Serializable {
     protected Color c1;
     protected Color c2;
     HasGraphLayout vv;

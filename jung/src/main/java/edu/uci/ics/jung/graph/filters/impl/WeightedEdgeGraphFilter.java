@@ -18,6 +18,8 @@ import edu.uci.ics.jung.graph.filters.EfficientFilter;
 import edu.uci.ics.jung.graph.filters.GeneralEdgeAcceptFilter;
 import edu.uci.ics.jung.graph.filters.LevelFilter;
 
+import java.io.Serializable;
+
 /**
  * This simple filter accepts Edges if their EdgeWeightLabeller turns out
  * to be greater than the input value.
@@ -25,7 +27,7 @@ import edu.uci.ics.jung.graph.filters.LevelFilter;
  */
 public class WeightedEdgeGraphFilter
 	extends GeneralEdgeAcceptFilter
-	implements LevelFilter, EfficientFilter {
+	implements LevelFilter, EfficientFilter, Serializable {
 
 	public WeightedEdgeGraphFilter(int threshold, EdgeWeightLabeller el) {
 		setValue(threshold);

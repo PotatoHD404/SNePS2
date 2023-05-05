@@ -13,6 +13,8 @@ package edu.uci.ics.jung.graph.predicates;
 
 import edu.uci.ics.jung.graph.ArchetypeVertex;
 
+import java.io.Serializable;
+
 
 /**
  * A predicate that checks to see whether a vertex's user
@@ -20,8 +22,7 @@ import edu.uci.ics.jung.graph.ArchetypeVertex;
  * the constructor-specified (key,datum) pair.  This predicate
  * may be used as a constraint.
  */
-public class UserDatumVertexPredicate extends VertexPredicate
-{
+public class UserDatumVertexPredicate extends VertexPredicate implements Serializable {
     public static final String message = "UserDatumVertexPredicate: ";
     private Object datum;
     private Object key;

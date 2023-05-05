@@ -13,11 +13,13 @@ package edu.uci.ics.jung.graph.predicates;
 
 import edu.uci.ics.jung.graph.ArchetypeVertex;
 
+import java.io.Serializable;
+
 /**
  * 
  * @author Joshua O'Madadhain
  */
-public abstract class VertexPredicate extends GPredicate
+public abstract class VertexPredicate extends GPredicate implements Serializable
 // implements Predicate
 {
 

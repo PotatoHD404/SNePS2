@@ -12,6 +12,7 @@
 package edu.uci.ics.jung.graph.decorators;
 
 
+import java.io.Serializable;
 import java.text.NumberFormat;
 
 import edu.uci.ics.jung.graph.ArchetypeEdge;
@@ -22,7 +23,7 @@ import edu.uci.ics.jung.graph.ArchetypeEdge;
  * 
  * @author Joshua O'Madadhain
  */
-public class NumberEdgeValueStringer implements EdgeStringer
+public class NumberEdgeValueStringer implements EdgeStringer, Serializable
 {
     protected NumberEdgeValue nev;
     protected final static NumberFormat nf = NumberFormat.getInstance();

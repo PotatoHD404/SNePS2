@@ -12,6 +12,8 @@ package edu.uci.ics.jung.graph.impl;
 import edu.uci.ics.jung.graph.UndirectedEdge;
 import edu.uci.ics.jung.graph.Vertex;
 
+import java.io.Serializable;
+
 /**
  * An implementation of <code>UndirectedEdge</code> that resides
  * in an undirected graph.
@@ -24,7 +26,7 @@ import edu.uci.ics.jung.graph.Vertex;
  * @see UndirectedSparseGraph
  */
 public class UndirectedSparseEdge extends AbstractSparseEdge
-	implements UndirectedEdge 
+	implements UndirectedEdge, Serializable
 {
     /**
      * Creates an undirected edge that connects vertex <code>from</code>

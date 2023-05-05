@@ -11,6 +11,7 @@
  */
 package edu.uci.ics.jung.graph.impl;
 
+import java.io.Serializable;
 import java.util.Iterator;
 
 import edu.uci.ics.jung.graph.ArchetypeGraph;
@@ -27,7 +28,7 @@ import edu.uci.ics.jung.utils.UserDataContainer;
  * @author danyelf
  * @deprecated As of version 1.7, JUNG now includes native versions of hypergraph classes.
  */
-public abstract class AbstractHyperUnitBPG implements UserDataContainer {
+public abstract class AbstractHyperUnitBPG implements UserDataContainer, Serializable {
 
 	protected BipartiteVertex vertex;
 	protected HypergraphBPG graph;

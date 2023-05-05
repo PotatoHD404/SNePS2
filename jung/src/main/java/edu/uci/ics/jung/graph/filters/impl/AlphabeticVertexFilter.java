@@ -21,13 +21,15 @@ import edu.uci.ics.jung.graph.decorators.StringLabeller;
 import edu.uci.ics.jung.graph.filters.EfficientFilter;
 import edu.uci.ics.jung.graph.filters.GeneralVertexAcceptFilter;
 
+import java.io.Serializable;
+
 /**
  * A small example filter that accepts vertices that are alphabetically
  * past the input value.
  * 
  * @author danyelf
  */
-public class AlphabeticVertexFilter extends GeneralVertexAcceptFilter implements EfficientFilter {
+public class AlphabeticVertexFilter extends GeneralVertexAcceptFilter implements EfficientFilter, Serializable {
 
 	public AlphabeticVertexFilter(
 		String threshhold,

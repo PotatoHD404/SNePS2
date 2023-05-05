@@ -14,6 +14,8 @@ package edu.uci.ics.jung.graph.predicates;
 import edu.uci.ics.jung.graph.ArchetypeEdge;
 import edu.uci.ics.jung.graph.ArchetypeGraph;
 
+import java.io.Serializable;
+
 /**
  * A predicate that tests to see whether a specified 
  * edge is currently part of a graph.  May be used as 
@@ -23,7 +25,7 @@ import edu.uci.ics.jung.graph.ArchetypeGraph;
  * 
  * @author Joshua O'Madadhain
  */
-public class NotInGraphEdgePredicate extends EdgePredicate implements UncopyablePredicate
+public class NotInGraphEdgePredicate extends EdgePredicate implements UncopyablePredicate, Serializable
 {
     private ArchetypeGraph ag;
     private static final String message = "NotInGraphEdgePredicate: ";

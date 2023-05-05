@@ -13,6 +13,8 @@ import edu.uci.ics.jung.graph.ArchetypeVertex;
 import edu.uci.ics.jung.graph.Vertex;
 import edu.uci.ics.jung.graph.predicates.VertexPredicate;
 
+import java.io.Serializable;
+
 /**
  * Evaluates to <code>true</code> if and only if 
  * the specified vertex is a source, i.e., has 
@@ -20,8 +22,7 @@ import edu.uci.ics.jung.graph.predicates.VertexPredicate;
  *  
  * @author Joshua O'Madadhain
  */
-public class SourceVertexPredicate extends VertexPredicate
-{
+public class SourceVertexPredicate extends VertexPredicate implements Serializable {
     protected static SourceVertexPredicate instance;
 
     protected SourceVertexPredicate()

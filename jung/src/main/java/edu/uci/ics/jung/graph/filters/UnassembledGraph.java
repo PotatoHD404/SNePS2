@@ -7,6 +7,7 @@
  */
 package edu.uci.ics.jung.graph.filters;
 
+import java.io.Serializable;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -30,7 +31,7 @@ import edu.uci.ics.jung.utils.UserData;
  * 
  * @author danyelf
  */
-public class UnassembledGraph {
+public class UnassembledGraph implements Serializable {
 
     protected String name;
 

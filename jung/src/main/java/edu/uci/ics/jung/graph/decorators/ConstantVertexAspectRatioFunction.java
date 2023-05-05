@@ -13,9 +13,11 @@ package edu.uci.ics.jung.graph.decorators;
 
 import edu.uci.ics.jung.graph.Vertex;
 
+import java.io.Serializable;
+
 
 public class ConstantVertexAspectRatioFunction 
-    implements VertexAspectRatioFunction
+    implements VertexAspectRatioFunction, Serializable
 {
     private float ratio;
     

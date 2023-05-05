@@ -9,6 +9,7 @@
 */
 package edu.uci.ics.jung.graph.filters;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -29,7 +30,7 @@ import edu.uci.ics.jung.graph.Vertex;
  * See sample code at <tt>{@link GeneralEdgeAcceptFilter GeneralEdgeAcceptFilter}</tt>
  * @author danyelf
  */
-public abstract class GeneralVertexAcceptFilter implements Filter {
+public abstract class GeneralVertexAcceptFilter implements Filter, Serializable {
 
 	public abstract boolean acceptVertex(Vertex vert);
 

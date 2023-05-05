@@ -9,6 +9,7 @@
 */
 package edu.uci.ics.jung.graph;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Set;
 
@@ -56,7 +57,7 @@ import edu.uci.ics.jung.utils.UserDataContainer;
  * @see ArchetypeVertex
  * 
  */
-public interface ArchetypeGraph extends UserDataContainer 
+public interface ArchetypeGraph extends UserDataContainer, Serializable
 {
     public static final String SUBSET_MANAGER = 
         "edu.ics.uci.jung.graph.ArchetypeGraph:SubsetManager";

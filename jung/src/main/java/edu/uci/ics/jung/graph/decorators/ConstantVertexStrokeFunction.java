@@ -13,6 +13,7 @@ package edu.uci.ics.jung.graph.decorators;
 
 import java.awt.BasicStroke;
 import java.awt.Stroke;
+import java.io.Serializable;
 
 import edu.uci.ics.jung.graph.Vertex;
 
@@ -20,7 +21,7 @@ import edu.uci.ics.jung.graph.Vertex;
  * 
  * @author Joshua O'Madadhain
  */
-public class ConstantVertexStrokeFunction implements VertexStrokeFunction
+public class ConstantVertexStrokeFunction implements VertexStrokeFunction, Serializable
 {
     protected Stroke stroke;
     

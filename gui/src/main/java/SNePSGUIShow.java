@@ -25,19 +25,14 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.Socket;
 import java.net.URL;
 import java.util.ArrayList;
-import com.google.gson.Gson;
 
 
 public class SNePSGUIShow extends javax.swing.JFrame {
-    static Gson gson = new Gson();
     private JFileChooser fc;
     private JFileChooser imageChooser;
     private SparseGraph testGraph;
@@ -397,13 +392,13 @@ public class SNePSGUIShow extends javax.swing.JFrame {
     }
 
     public void displayNetwork(SparseGraph dsg) throws IOException {
-        try {
-//            byte[] serializedData = dsg.serializeObject();
+//        byte[] serializedData = objectMapper.writeValueAsBytes(dsg);
+        byte[] serializedData = dsg.serializeObject();
+        // write bytes to file
 
-            sendSerializedData(gson.toJson(dsg).getBytes());
-        } catch (IOException e) {
-            System.err.println("Failed to serialize MySparseGraph object: " + e.getMessage());
-        }
+//        FileOutputStream fos = new FileOutputStream("C:\\KR Systems\\sneps\\Sneps-2.7.0\\SnepsGUI\\res.json");
+//        fos.write(serializedData);
+        sendSerializedData(serializedData);
     }
 
     public void sendSerializedData(byte[] serializedData) throws IOException {

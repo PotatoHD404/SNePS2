@@ -11,6 +11,7 @@
  */
 package edu.uci.ics.jung.graph.impl;
 
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -28,8 +29,7 @@ import edu.uci.ics.jung.utils.GraphUtils;
  * @author Joshua O'Madadhain
  */
 public class SetHypergraph extends AbstractArchetypeGraph
-        implements Hypergraph
-{
+        implements Hypergraph, Serializable {
     protected Set edges;
     protected Set vertices;
     

@@ -11,6 +11,7 @@
  */
 package edu.uci.ics.jung.graph.impl;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -42,8 +43,7 @@ import edu.uci.ics.jung.graph.predicates.ParallelEdgePredicate;
  *
  * @author Joshua O'Madadhain
  */
-public class SimpleSparseVertex extends AbstractSparseVertex
-{
+public class SimpleSparseVertex extends AbstractSparseVertex implements Serializable {
     /**
      * A map of the predecessors of this vertex to the corresponding 
      * sets of incoming edges.

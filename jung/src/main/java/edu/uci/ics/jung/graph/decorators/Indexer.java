@@ -11,6 +11,7 @@
  */
 package edu.uci.ics.jung.graph.decorators;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -33,7 +34,7 @@ import edu.uci.ics.jung.utils.UserData;
  * @author danyelf
  *  
  */
-public class Indexer {
+public class Indexer implements Serializable {
 
 	/** This is the key in the Graph's UserData where the Indexer is stored */
 	static final Object INDEX_DEFAULT_KEY = "IndexDefaultKey";

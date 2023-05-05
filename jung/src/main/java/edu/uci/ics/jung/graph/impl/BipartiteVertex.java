@@ -16,13 +16,15 @@ import edu.uci.ics.jung.exceptions.FatalException;
 import edu.uci.ics.jung.graph.ArchetypeGraph;
 import edu.uci.ics.jung.graph.ArchetypeVertex;
 
+import java.io.Serializable;
+
 /**
  * 
  * created Dec 28, 2003
  * 
  * @author danyelf
  */
-public class BipartiteVertex extends SparseVertex {
+public class BipartiteVertex extends SparseVertex implements Serializable {
 
 	/**
 	 * Specialized copy function for copy FROM BipartiteGraph TO BipartiteGraph

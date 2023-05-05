@@ -11,6 +11,7 @@
 */
 package edu.uci.ics.jung.graph.predicates;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -24,8 +25,7 @@ import edu.uci.ics.jung.graph.Vertex;
  * 
  * @author Joshua O'Madadhain
  */
-public class ConnectedGraphPredicate extends GraphPredicate
-{
+public class ConnectedGraphPredicate extends GraphPredicate implements Serializable {
     private static ConnectedGraphPredicate instance;
     private static String message = "connected graph predicate";
     

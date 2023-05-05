@@ -13,11 +13,13 @@ package edu.uci.ics.jung.graph.predicates;
 
 import edu.uci.ics.jung.graph.ArchetypeEdge;
 
+import java.io.Serializable;
+
 /**
  * 
  * @author Joshua O'Madadhain
  */
-public abstract class EdgePredicate extends GPredicate
+public abstract class EdgePredicate extends GPredicate implements Serializable
 //implements Predicate
 {
     /**

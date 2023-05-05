@@ -11,6 +11,8 @@ package edu.uci.ics.jung.graph.filters;
 
 import edu.uci.ics.jung.graph.Graph;
 
+import java.io.Serializable;
+
 /**
  * Contains an audit trail of a graph filtering step. Maintains the name
  * of the filters used, a history of previous filters, and links to
@@ -18,7 +20,7 @@ import edu.uci.ics.jung.graph.Graph;
  * 
  * @author danyelf
  */
-public class GraphAssemblyRecord {
+public class GraphAssemblyRecord implements Serializable {
 
 	/**
 	 * The key that identifes this <tt>GraphAssemblyRecord</tt> in the 

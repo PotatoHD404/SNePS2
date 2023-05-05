@@ -11,6 +11,7 @@
  */
 package edu.uci.ics.jung.graph.impl;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 
 /**
@@ -19,8 +20,7 @@ import java.util.LinkedList;
  * 
  * @author Joshua O'Madadhain
  */
-public class ListHyperedge extends CollectionHyperedge
-{
+public class ListHyperedge extends CollectionHyperedge implements Serializable {
     public ListHyperedge()
     {
         initialize();

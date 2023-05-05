@@ -12,12 +12,13 @@
 package edu.uci.ics.jung.graph.decorators;
 
 import java.awt.Color;
+import java.io.Serializable;
 
 import edu.uci.ics.jung.graph.Vertex;
 import edu.uci.ics.jung.visualization.PickedInfo;
 
 
-public class ConstantVertexColorFunction implements VertexColorFunction
+public class ConstantVertexColorFunction implements VertexColorFunction, Serializable
 {
     protected Color fore_color;
     protected Color back_color;

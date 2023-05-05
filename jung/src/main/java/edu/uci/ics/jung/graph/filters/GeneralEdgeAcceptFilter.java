@@ -9,6 +9,7 @@
 */
 package edu.uci.ics.jung.graph.filters;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -41,7 +42,7 @@ import edu.uci.ics.jung.graph.Graph;
  * 
  * @author danyelf
  */
-public abstract class GeneralEdgeAcceptFilter implements Filter {
+public abstract class GeneralEdgeAcceptFilter implements Filter, Serializable {
 
 	/**
 	 * Determines whether the current edge should be accepted

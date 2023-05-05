@@ -11,6 +11,8 @@ package edu.uci.ics.jung.graph.predicates;
 
 import edu.uci.ics.jung.graph.ArchetypeVertex;
 
+import java.io.Serializable;
+
 /**
  * A predicate which tests to see whether a specified
  * vertex has any neighbors.  Not suitable for use
@@ -18,7 +20,7 @@ import edu.uci.ics.jung.graph.ArchetypeVertex;
  * 
  * @author Joshua O'Madadhain
  */
-public class IsolatedVertexPredicate extends VertexPredicate {
+public class IsolatedVertexPredicate extends VertexPredicate implements Serializable {
 
     private static IsolatedVertexPredicate instance;
 

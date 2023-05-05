@@ -18,11 +18,13 @@ import edu.uci.ics.jung.graph.DirectedEdge;
 import edu.uci.ics.jung.graph.Graph;
 import edu.uci.ics.jung.graph.impl.SparseTree;
 
+import java.io.Serializable;
+
 
 /**
  * @author danyelf
  */
-public class TreePredicate extends EdgePredicate {
+public class TreePredicate extends EdgePredicate implements Serializable {
 
     /**
      * Any edges added to this graph must go to a vertex where

@@ -9,6 +9,7 @@
 */
 package edu.uci.ics.jung.graph.impl;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -41,7 +42,7 @@ import edu.uci.ics.jung.graph.Vertex;
  * @see AbstractSparseEdge
  */
 public abstract class AbstractSparseVertex extends AbstractArchetypeVertex
-    implements Vertex, Cloneable
+    implements Vertex, Cloneable, Serializable
 {
     /**
      * The next vertex ID.

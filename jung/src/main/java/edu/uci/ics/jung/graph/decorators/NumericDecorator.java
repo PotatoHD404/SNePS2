@@ -11,11 +11,13 @@ package edu.uci.ics.jung.graph.decorators;
 
 import edu.uci.ics.jung.utils.UserDataContainer;
 
+import java.io.Serializable;
+
 /**
  * Decorator for any value type that extends the java.lang.Number class
  * @author Scott White
  */
-public class NumericDecorator extends Decorator {
+public class NumericDecorator extends Decorator implements Serializable {
 
     /**
      * Constructs and initializes the decorator

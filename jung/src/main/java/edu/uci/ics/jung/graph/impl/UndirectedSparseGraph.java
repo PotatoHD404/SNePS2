@@ -9,6 +9,7 @@
 */
 package edu.uci.ics.jung.graph.impl;
 
+import java.io.Serializable;
 import java.util.Collection;
 
 import edu.uci.ics.jung.graph.UndirectedGraph;
@@ -30,7 +31,7 @@ import edu.uci.ics.jung.graph.UndirectedGraph;
  * @see UndirectedSparseEdge
  */
 public class UndirectedSparseGraph extends SparseGraph
-	implements UndirectedGraph 
+	implements UndirectedGraph, Serializable
 {
 
     /**

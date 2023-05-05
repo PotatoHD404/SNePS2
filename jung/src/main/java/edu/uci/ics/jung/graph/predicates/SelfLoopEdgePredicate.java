@@ -15,14 +15,15 @@ import edu.uci.ics.jung.graph.ArchetypeEdge;
 import edu.uci.ics.jung.graph.Edge;
 import edu.uci.ics.jung.utils.Pair;
 
+import java.io.Serializable;
+
 /**
  * A predicate that checks to see whether a specified
  * edge is a self-loop.
  * 
  * @author Joshua O'Madadhain
  */
-public class SelfLoopEdgePredicate extends EdgePredicate
-{
+public class SelfLoopEdgePredicate extends EdgePredicate implements Serializable {
     private static SelfLoopEdgePredicate instance;
     private static final String message = "SelfLoopEdgePredicate";
 

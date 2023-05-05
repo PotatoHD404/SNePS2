@@ -13,13 +13,15 @@ package edu.uci.ics.jung.graph.decorators;
 
 import edu.uci.ics.jung.graph.ArchetypeVertex;
 
+import java.io.Serializable;
+
 /**
  * Returns the specified label for all vertices.  Useful for
  * specifying "no label".
  * 
  * @author Joshua O'Madadhain
  */
-public class ConstantVertexStringer implements VertexStringer
+public class ConstantVertexStringer implements VertexStringer, Serializable
 {
     protected String label;
     

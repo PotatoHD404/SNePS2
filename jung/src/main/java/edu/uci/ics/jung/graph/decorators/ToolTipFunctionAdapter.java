@@ -11,6 +11,7 @@
 package edu.uci.ics.jung.graph.decorators;
 
 import java.awt.event.MouseEvent;
+import java.io.Serializable;
 
 import edu.uci.ics.jung.graph.Edge;
 import edu.uci.ics.jung.graph.Vertex;
@@ -24,7 +25,7 @@ import edu.uci.ics.jung.graph.Vertex;
  *
  * 
  */
-public class ToolTipFunctionAdapter implements ToolTipFunction {
+public class ToolTipFunctionAdapter implements ToolTipFunction, Serializable {
 
     /* (non-Javadoc)
      * @see edu.uci.ics.jung.graph.decorators.ToolTipFunction#getToolTipText(edu.uci.ics.jung.graph.Vertex)

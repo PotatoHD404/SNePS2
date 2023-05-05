@@ -15,12 +15,14 @@ import edu.uci.ics.jung.graph.ArchetypeEdge;
 import edu.uci.ics.jung.graph.DirectedEdge;
 import edu.uci.ics.jung.graph.UndirectedEdge;
 
+import java.io.Serializable;
+
 /**
  * Returns the constructor-specified value for each edge type.
  * 
  * @author Joshua O'Madadhain
  */
-public class ConstantDirectionalEdgeValue implements NumberEdgeValue
+public class ConstantDirectionalEdgeValue implements NumberEdgeValue, Serializable
 {
     protected Double undirected_closeness;
     protected Double directed_closeness;

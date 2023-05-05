@@ -16,12 +16,14 @@ import javax.swing.Icon;
 import edu.uci.ics.jung.graph.ArchetypeVertex;
 import edu.uci.ics.jung.visualization.PickedInfo;
 
+import java.io.Serializable;
+
 /**
  * Supplies an Icon for each vertex according to the <code>Icon</code>
  * parameters given in the constructor, so that picked and
  * non-picked vertices can be made to look different.
  */
-public class PickableVertexIconFunction implements VertexIconFunction {
+public class PickableVertexIconFunction implements VertexIconFunction, Serializable {
 
     protected Icon icon;
     protected Icon picked_icon;

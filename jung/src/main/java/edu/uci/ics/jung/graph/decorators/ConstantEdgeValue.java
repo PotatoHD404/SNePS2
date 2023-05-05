@@ -15,12 +15,14 @@ package edu.uci.ics.jung.graph.decorators;
 
 import edu.uci.ics.jung.graph.ArchetypeEdge;
 
+import java.io.Serializable;
+
 /**
  * Returns a constructor-specified constant value for each edge.
  *  
  * @author Joshua O'Madadhain
  */
-public class ConstantEdgeValue implements NumberEdgeValue
+public class ConstantEdgeValue implements NumberEdgeValue, Serializable
 {
     protected Number value;
 

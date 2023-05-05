@@ -15,11 +15,13 @@ import org.apache.commons.collections.Predicate;
 
 import edu.uci.ics.jung.graph.ArchetypeGraph;
 
+import java.io.Serializable;
+
 /**
  * 
  * @author Joshua O'Madadhain
  */
-public abstract class GraphPredicate implements Predicate
+public abstract class GraphPredicate implements Predicate, Serializable
 {
     /**
      * @see org.apache.commons.collections.Predicate#evaluate(Object)

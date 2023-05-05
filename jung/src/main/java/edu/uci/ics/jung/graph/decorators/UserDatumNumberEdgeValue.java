@@ -9,6 +9,7 @@
  */
 package edu.uci.ics.jung.graph.decorators;
 
+import java.io.Serializable;
 import java.util.Iterator;
 
 import edu.uci.ics.jung.graph.ArchetypeEdge;
@@ -22,7 +23,7 @@ import edu.uci.ics.jung.utils.UserDataContainer.CopyAction;
  *  
  * @author Joshua O'Madadhain
  */
-public class UserDatumNumberEdgeValue implements NumberEdgeValue
+public class UserDatumNumberEdgeValue implements NumberEdgeValue, Serializable
 {
     protected Object key;
     protected CopyAction copy_action;

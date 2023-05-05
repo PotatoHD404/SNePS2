@@ -11,6 +11,7 @@
  */
 package edu.uci.ics.jung.graph.decorators;
 
+import java.io.Serializable;
 import java.text.NumberFormat;
 
 import edu.uci.ics.jung.graph.ArchetypeEdge;
@@ -22,7 +23,7 @@ import edu.uci.ics.jung.graph.ArchetypeVertex;
  * 
  * @author Joshua O'Madadhain
  */
-public class NumberVertexValueStringer implements VertexStringer
+public class NumberVertexValueStringer implements VertexStringer, Serializable
 {
     protected NumberVertexValue nvv;
     protected final static NumberFormat nf = NumberFormat.getInstance();

@@ -9,6 +9,7 @@
 */
 package edu.uci.ics.jung.graph.impl;
 
+import java.io.Serializable;
 import java.util.Collection;
 
 import edu.uci.ics.jung.graph.DirectedGraph;
@@ -33,7 +34,7 @@ import edu.uci.ics.jung.graph.DirectedGraph;
  * @see DirectedSparseEdge
  */
 public class DirectedSparseGraph extends SparseGraph
-	implements DirectedGraph {
+	implements DirectedGraph, Serializable {
 
 	/**
 	 * Creates an instance of a sparse directed graph.

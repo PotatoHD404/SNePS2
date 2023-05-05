@@ -11,6 +11,7 @@
  */
 package edu.uci.ics.jung.graph.impl;
 
+import java.io.Serializable;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -24,7 +25,7 @@ import edu.uci.ics.jung.graph.ArchetypeVertex;
  * @author Joshua O'Madadhain
  */
 public abstract class AbstractArchetypeEdge extends AbstractElement implements
-        ArchetypeEdge
+        ArchetypeEdge, Serializable
 {
 
     public Set getIncidentElements()

@@ -9,6 +9,7 @@
  */
 package edu.uci.ics.jung.graph.impl;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -37,7 +38,7 @@ import edu.uci.ics.jung.utils.UserDataDelegate;
  * @author Joshua O'Madadhain
  */
 public abstract class AbstractArchetypeGraph extends UserDataDelegate
-        implements ArchetypeGraph, Cloneable {
+        implements ArchetypeGraph, Cloneable, Serializable {
 
     /**
      * GraphEventType -> Graph Listener list table

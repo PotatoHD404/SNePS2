@@ -13,6 +13,8 @@ import edu.uci.ics.jung.graph.Vertex;
 import edu.uci.ics.jung.graph.filters.Filter;
 import edu.uci.ics.jung.graph.filters.GeneralVertexAcceptFilter;
 
+import java.io.Serializable;
+
 /**
  * Accepts only nodes that have at least one edge--that is, nodes that
  * are connected to one other node. This removes isolates, usually in order
@@ -25,7 +27,7 @@ import edu.uci.ics.jung.graph.filters.GeneralVertexAcceptFilter;
  * </pre>
  * @author danyelf
  */
-public class DropSoloNodesFilter extends GeneralVertexAcceptFilter {
+public class DropSoloNodesFilter extends GeneralVertexAcceptFilter implements Serializable {
 
 	public boolean acceptVertex(Vertex vert) {
 		boolean b = (vert.getIncidentEdges().size() > 0);

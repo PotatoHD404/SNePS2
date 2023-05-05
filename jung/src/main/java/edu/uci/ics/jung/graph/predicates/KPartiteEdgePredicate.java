@@ -11,6 +11,7 @@
  */
 package edu.uci.ics.jung.graph.predicates;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Iterator;
 
@@ -31,8 +32,7 @@ import edu.uci.ics.jung.utils.Pair;
  * @author Joshua O'Madadhain
  *
  */
-public class KPartiteEdgePredicate extends EdgePredicate
-{
+public class KPartiteEdgePredicate extends EdgePredicate implements Serializable {
     private Collection vertex_partitions;
     private Predicate mutex;
     private static String message = "KPartiteEdgePredicate";

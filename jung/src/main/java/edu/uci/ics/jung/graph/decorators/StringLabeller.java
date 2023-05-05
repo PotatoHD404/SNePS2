@@ -13,6 +13,7 @@
  */
 package edu.uci.ics.jung.graph.decorators;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -34,7 +35,7 @@ import edu.uci.ics.jung.utils.UserData;
  * @author danyelf
  *  
  */
-public class StringLabeller implements VertexStringer {
+public class StringLabeller implements VertexStringer, Serializable {
 
 	/**
 	 * The key that hasLabeller() and getLabeller() use.

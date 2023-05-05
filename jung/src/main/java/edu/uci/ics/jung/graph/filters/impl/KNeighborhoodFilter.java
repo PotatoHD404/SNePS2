@@ -12,6 +12,7 @@
  *
  */
 package edu.uci.ics.jung.graph.filters.impl;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -26,7 +27,7 @@ import edu.uci.ics.jung.graph.filters.UnassembledGraph;
  * @author Danyel Fisher
  *
  */
-public class KNeighborhoodFilter implements Filter {
+public class KNeighborhoodFilter implements Filter, Serializable {
 	public static final int IN_OUT = 0;
 	public static final int IN = 1;
 	public static final int OUT = 2;

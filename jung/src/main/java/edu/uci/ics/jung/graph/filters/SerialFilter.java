@@ -9,6 +9,7 @@
 */
 package edu.uci.ics.jung.graph.filters;
 
+import java.io.Serializable;
 import java.util.*;
 
 import edu.uci.ics.jung.graph.Graph;
@@ -35,7 +36,7 @@ import edu.uci.ics.jung.graph.Graph;
  * 
  * @author danyelf
  */
-public class SerialFilter implements Filter, EfficientFilter {
+public class SerialFilter implements Filter, EfficientFilter, Serializable {
 
 	private List filters;
 

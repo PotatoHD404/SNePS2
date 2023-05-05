@@ -11,6 +11,7 @@
  */
 package edu.uci.ics.jung.graph.impl;
 
+import java.io.Serializable;
 import java.lang.ref.WeakReference;
 import java.util.Map;
 
@@ -26,12 +27,12 @@ import edu.uci.ics.jung.utils.UserDataDelegate;
  */
 public abstract class AbstractElement extends UserDataDelegate
 //extends UnifiedUserData // Delegate 
-    implements Element, Cloneable
-{
+        implements Element, Cloneable, Serializable {
     /**
      * The graph of which this vertex is an element.
      */
-    protected WeakReference m_Graph;
+//    protected transient WeakReference m_Graph;
+    protected AbstractArchetypeGraph m_Graph;
 
     /**
      * Used to define vertex equivalence.
@@ -43,11 +44,12 @@ public abstract class AbstractElement extends UserDataDelegate
      */
     public ArchetypeGraph getGraph() 
     {
-        if(  m_Graph == null ) 
-            return null;
-        
-        ArchetypeGraph g = (ArchetypeGraph) m_Graph.get(); 
-        return g;
+        return m_Graph;
+//        if(  m_Graph == null )
+//            return null;
+//
+//        ArchetypeGraph g = (ArchetypeGraph) m_Graph.get();
+//        return g;
     }
 
     /**
@@ -57,7 +59,7 @@ public abstract class AbstractElement extends UserDataDelegate
         if (m_Graph == null )
         {
 //            List l = getRepositoryData();
-            this.m_Graph = new WeakReference(g) ;
+            this.m_Graph = g;
 //            updateRepository(l);
         } else {
             throw new FatalException("Internal error: element " + this +

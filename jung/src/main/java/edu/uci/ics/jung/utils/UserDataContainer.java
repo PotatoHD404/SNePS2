@@ -9,6 +9,7 @@
 */
 package edu.uci.ics.jung.utils;
 
+import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.util.Iterator;
 
@@ -21,7 +22,7 @@ import edu.uci.ics.jung.exceptions.FatalException;
  * 
  * @author Joshua O'Madadhain, Scott White, Danyel Fisher
  */
-public interface UserDataContainer extends Cloneable
+public interface UserDataContainer extends Cloneable, Serializable
 {
 
     public Object clone() throws CloneNotSupportedException;

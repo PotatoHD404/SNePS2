@@ -13,6 +13,7 @@
  */
 package edu.uci.ics.jung.graph.decorators;
 
+import java.io.Serializable;
 import java.text.NumberFormat;
 
 import edu.uci.ics.jung.graph.ArchetypeEdge;
@@ -26,7 +27,7 @@ import edu.uci.ics.jung.graph.ArchetypeEdge;
  * @author danyelf
  *
  */
-public class EdgeWeightLabellerStringer implements EdgeStringer {
+public class EdgeWeightLabellerStringer implements EdgeStringer, Serializable {
 
     protected EdgeWeightLabeller ewl;
     protected NumberFormat numberFormat;

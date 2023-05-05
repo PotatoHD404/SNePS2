@@ -10,13 +10,15 @@
 package edu.uci.ics.jung.graph.decorators;
 
 
+import java.io.Serializable;
+
 /**
  * An interface for decorators that return a 
  * <code>Shape</code> for a specified edge.
  *  
  * @author Tom Nelson
  */
-public abstract class AbstractEdgeShapeFunction implements EdgeShapeFunction {
+public abstract class AbstractEdgeShapeFunction implements EdgeShapeFunction, Serializable {
 
     /**
      * Specifies how far apart to place the control points for edges being

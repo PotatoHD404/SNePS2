@@ -11,6 +11,7 @@
  */
 package edu.uci.ics.jung.graph.decorators;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,7 +23,7 @@ import edu.uci.ics.jung.graph.ArchetypeVertex;
  * 
  * @author Joshua O'Madadhain
  */
-public class MapNumberVertexValue implements NumberVertexValue
+public class MapNumberVertexValue implements NumberVertexValue, Serializable
 {
     protected Map map;
     

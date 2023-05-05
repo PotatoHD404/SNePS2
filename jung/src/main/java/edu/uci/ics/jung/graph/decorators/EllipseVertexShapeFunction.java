@@ -12,6 +12,7 @@
 package edu.uci.ics.jung.graph.decorators;
 
 import java.awt.Shape;
+import java.io.Serializable;
 
 import edu.uci.ics.jung.graph.Vertex;
 
@@ -19,8 +20,7 @@ import edu.uci.ics.jung.graph.Vertex;
  * 
  * @author Joshua O'Madadhain
  */
-public class EllipseVertexShapeFunction extends AbstractVertexShapeFunction
-{
+public class EllipseVertexShapeFunction extends AbstractVertexShapeFunction implements Serializable {
     public EllipseVertexShapeFunction() 
     {
     }

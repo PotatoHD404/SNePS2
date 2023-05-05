@@ -11,6 +11,7 @@
  */
 package edu.uci.ics.jung.utils;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -62,7 +63,7 @@ import edu.uci.ics.jung.exceptions.FatalException;
  * the currect data is shared or not. This flag is assigned when the data is
  * added.
  */
-public class DefaultUserData extends UserData implements UserDataFactory
+public class DefaultUserData extends UserData implements UserDataFactory, Serializable
 {
     // maps a Key to a Pair( UserData, CopyAction )
     private Map userDataStorage;

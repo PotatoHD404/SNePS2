@@ -11,11 +11,13 @@ package edu.uci.ics.jung.graph.filters;
 
 import edu.uci.ics.jung.graph.Vertex;
 
+import java.io.Serializable;
+
 /**
  * A small filter that returns the vertices and edges in the orignal Graph.
  * @author danyelf
  */
-public class TrivialFilter extends GeneralVertexAcceptFilter implements EfficientFilter {
+public class TrivialFilter extends GeneralVertexAcceptFilter implements EfficientFilter, Serializable {
 
 	/**
 	 * Returns true for all vertices.

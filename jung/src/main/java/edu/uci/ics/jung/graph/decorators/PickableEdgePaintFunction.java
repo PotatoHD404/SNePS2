@@ -12,6 +12,7 @@
 package edu.uci.ics.jung.graph.decorators;
 
 import java.awt.Paint;
+import java.io.Serializable;
 
 import edu.uci.ics.jung.graph.Edge;
 import edu.uci.ics.jung.visualization.PickedInfo;
@@ -25,8 +26,7 @@ import edu.uci.ics.jung.visualization.PickedInfo;
  * @author Joshua O'Madadhain
  * 
  */
-public class PickableEdgePaintFunction extends AbstractEdgePaintFunction 
-{
+public class PickableEdgePaintFunction extends AbstractEdgePaintFunction implements Serializable {
     protected PickedInfo pi;
     protected Paint draw_paint;
     protected Paint picked_paint;

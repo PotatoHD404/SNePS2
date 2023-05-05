@@ -12,6 +12,7 @@
  */
 package edu.uci.ics.jung.graph.predicates;
 
+import java.io.Serializable;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -25,7 +26,7 @@ import edu.uci.ics.jung.graph.Vertex;
  * 
  * @author danyelf
  */
-public class CliqueGraphPredicate extends GraphPredicate {
+public class CliqueGraphPredicate extends GraphPredicate implements Serializable {
 
     private static final String message = "CliqueGraphPredicate";
     private static CliqueGraphPredicate instance;

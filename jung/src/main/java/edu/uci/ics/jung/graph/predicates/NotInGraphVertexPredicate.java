@@ -14,6 +14,8 @@ package edu.uci.ics.jung.graph.predicates;
 import edu.uci.ics.jung.graph.ArchetypeGraph;
 import edu.uci.ics.jung.graph.ArchetypeVertex;
 
+import java.io.Serializable;
+
 /**
  * A predicate that tests to see whether a specified 
  * vertex is currently part of a graph.  May be used as 
@@ -23,7 +25,7 @@ import edu.uci.ics.jung.graph.ArchetypeVertex;
  * 
  * @author Joshua O'Madadhain
  */
-public class NotInGraphVertexPredicate extends VertexPredicate implements UncopyablePredicate
+public class NotInGraphVertexPredicate extends VertexPredicate implements UncopyablePredicate, Serializable
 {
     private ArchetypeGraph ag;
     private final static String message = "NotInGraphVertexPredicate: ";

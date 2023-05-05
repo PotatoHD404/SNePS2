@@ -15,13 +15,15 @@ import javax.swing.Icon;
 
 import edu.uci.ics.jung.graph.ArchetypeVertex;
 
+import java.io.Serializable;
+
 /**
  * Returns the specified label for all vertices.  Useful for
  * specifying "no label".
  * 
  * @author Tom Nelson - RABA Technologies
  */
-public class ConstantVertexIconFunction implements VertexIconFunction {
+public class ConstantVertexIconFunction implements VertexIconFunction, Serializable {
 //    protected Image image;
     protected Icon icon;
     

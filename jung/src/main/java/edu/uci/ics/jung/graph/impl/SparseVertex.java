@@ -10,6 +10,7 @@
 package edu.uci.ics.jung.graph.impl;
 
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -41,8 +42,7 @@ import edu.uci.ics.jung.graph.Vertex;
  * 
  * @see SparseGraph
  */
-public class SparseVertex extends SimpleSparseVertex 
-{
+public class SparseVertex extends SimpleSparseVertex implements Serializable {
     /**
      * Creates a new instance of a vertex for inclusion in a 
      * sparse graph.

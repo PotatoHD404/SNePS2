@@ -17,6 +17,8 @@ import edu.uci.ics.jung.graph.Graph;
 import edu.uci.ics.jung.graph.Vertex;
 import edu.uci.ics.jung.utils.UserData;
 
+import java.io.Serializable;
+
 /**
  * 
  * The GlobalStringLabeller applies labels to all vertices in a series of
@@ -27,7 +29,7 @@ import edu.uci.ics.jung.utils.UserData;
  *  
  */
 
-public class GlobalStringLabeller extends StringLabeller {
+public class GlobalStringLabeller extends StringLabeller implements Serializable {
 
     protected static GlobalStringLabeller instance;
 

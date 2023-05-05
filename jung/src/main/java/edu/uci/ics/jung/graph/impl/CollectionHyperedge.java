@@ -11,6 +11,7 @@
  */
 package edu.uci.ics.jung.graph.impl;
 
+import java.io.Serializable;
 import java.util.Collection;
 
 /**
@@ -19,8 +20,7 @@ import java.util.Collection;
  * 
  * @author Joshua O'Madadhain
  */
-public abstract class CollectionHyperedge extends AbstractHyperedge
-{
+public abstract class CollectionHyperedge extends AbstractHyperedge implements Serializable {
     protected Collection vertices;
     
     /**

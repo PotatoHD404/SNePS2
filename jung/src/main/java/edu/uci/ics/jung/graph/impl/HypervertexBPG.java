@@ -12,6 +12,7 @@
  */
 package edu.uci.ics.jung.graph.impl;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -24,7 +25,7 @@ import edu.uci.ics.jung.graph.*;
  * 
  * @author danyelf
  */
-public class HypervertexBPG extends AbstractHyperUnitBPG implements Hypervertex {
+public class HypervertexBPG extends AbstractHyperUnitBPG implements Hypervertex, Serializable {
 
 	public HypervertexBPG() {
 	}

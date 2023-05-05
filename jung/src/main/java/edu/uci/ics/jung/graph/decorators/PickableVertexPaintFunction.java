@@ -12,6 +12,7 @@
 package edu.uci.ics.jung.graph.decorators;
 
 import java.awt.Paint;
+import java.io.Serializable;
 
 import edu.uci.ics.jung.graph.Vertex;
 import edu.uci.ics.jung.visualization.PickedInfo;
@@ -21,7 +22,7 @@ import edu.uci.ics.jung.visualization.PickedInfo;
  * parameters given in the constructor, so that picked and
  * non-picked vertices can be made to look different.
  */
-public class PickableVertexPaintFunction implements VertexPaintFunction {
+public class PickableVertexPaintFunction implements VertexPaintFunction, Serializable {
 
     protected Paint draw_paint;
     protected Paint fill_paint;

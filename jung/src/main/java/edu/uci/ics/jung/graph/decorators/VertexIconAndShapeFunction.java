@@ -13,6 +13,7 @@ package edu.uci.ics.jung.graph.decorators;
 import java.awt.Image;
 import java.awt.Shape;
 import java.awt.geom.AffineTransform;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,7 +32,7 @@ import edu.uci.ics.jung.visualization.FourPassImageShaper;
  *
  *
  */public class VertexIconAndShapeFunction extends DefaultVertexIconFunction
-     implements VertexShapeFunction {
+        implements VertexShapeFunction, Serializable {
      
      protected Map shapeMap = new HashMap();
      protected VertexShapeFunction delegate;

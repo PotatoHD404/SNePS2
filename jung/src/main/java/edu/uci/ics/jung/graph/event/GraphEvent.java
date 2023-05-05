@@ -9,6 +9,7 @@
  */
 package edu.uci.ics.jung.graph.event;
 
+import java.io.Serializable;
 import java.util.EventObject;
 
 import edu.uci.ics.jung.graph.ArchetypeEdge;
@@ -23,7 +24,7 @@ import edu.uci.ics.jung.graph.Element;
  * change as well as the graph whose structure was changed.
  * @author Scott White
  */
-public class GraphEvent extends EventObject {
+public class GraphEvent extends EventObject implements Serializable {
     private Element mGraphElement;
 
     public GraphEvent(ArchetypeGraph g, Element graphElement) {

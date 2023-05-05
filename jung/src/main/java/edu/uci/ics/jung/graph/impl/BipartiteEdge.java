@@ -18,6 +18,8 @@ import edu.uci.ics.jung.graph.ArchetypeEdge;
 import edu.uci.ics.jung.graph.ArchetypeGraph;
 import edu.uci.ics.jung.utils.Pair;
 
+import java.io.Serializable;
+
 /**
  * A simple extension of the UndirectedSparseEdge, except
  * with careful bounds checking. The constructor throws
@@ -27,7 +29,7 @@ import edu.uci.ics.jung.utils.Pair;
  * 
  * @author danyelf
  */
-public class BipartiteEdge extends UndirectedSparseEdge {
+public class BipartiteEdge extends UndirectedSparseEdge implements Serializable {
 
 	/**
 	 * The BipartiteEdge constructor.

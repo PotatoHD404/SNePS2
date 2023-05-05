@@ -11,10 +11,11 @@
  */
 package edu.uci.ics.jung.utils;
 
+import java.io.Serializable;
 import java.util.Iterator;
 
 
-public class UserDataDelegate implements UserDataContainer, Cloneable
+public class UserDataDelegate implements UserDataContainer, Cloneable, Serializable
 {
     protected UserDataContainer udc_delegate;
     protected static UserDataFactory factory = (UserDataFactory)new DefaultUserData();

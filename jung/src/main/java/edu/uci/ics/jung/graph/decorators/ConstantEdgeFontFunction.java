@@ -12,6 +12,7 @@
 package edu.uci.ics.jung.graph.decorators;
 
 import java.awt.Font;
+import java.io.Serializable;
 
 import edu.uci.ics.jung.graph.Edge;
 
@@ -19,7 +20,7 @@ import edu.uci.ics.jung.graph.Edge;
  * 
  * @author Joshua O'Madadhain
  */
-public class ConstantEdgeFontFunction implements EdgeFontFunction
+public class ConstantEdgeFontFunction implements EdgeFontFunction, Serializable
 {
     protected Font font;
     

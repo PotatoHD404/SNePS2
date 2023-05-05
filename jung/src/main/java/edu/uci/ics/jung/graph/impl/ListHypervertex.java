@@ -11,6 +11,7 @@
  */
 package edu.uci.ics.jung.graph.impl;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 
 /**
@@ -22,8 +23,7 @@ import java.util.LinkedList;
  * 
  * @author Joshua O'Madadhain
  */
-public class ListHypervertex extends CollectionHypervertex 
-{
+public class ListHypervertex extends CollectionHypervertex implements Serializable {
     /**
      * 
      */

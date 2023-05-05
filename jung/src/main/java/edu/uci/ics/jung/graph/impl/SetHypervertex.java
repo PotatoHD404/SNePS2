@@ -11,6 +11,7 @@
  */
 package edu.uci.ics.jung.graph.impl;
 
+import java.io.Serializable;
 import java.util.HashSet;
 
 /**
@@ -22,8 +23,7 @@ import java.util.HashSet;
  * 
  * @author Joshua O'Madadhain
  */
-public class SetHypervertex extends CollectionHypervertex 
-{
+public class SetHypervertex extends CollectionHypervertex implements Serializable {
     public SetHypervertex()
     {
 //        super();

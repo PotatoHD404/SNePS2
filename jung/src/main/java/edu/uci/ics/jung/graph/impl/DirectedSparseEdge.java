@@ -12,6 +12,8 @@ package edu.uci.ics.jung.graph.impl;
 import edu.uci.ics.jung.graph.DirectedEdge;
 import edu.uci.ics.jung.graph.Vertex;
 
+import java.io.Serializable;
+
 /**
  * An implementation of <code>DirectedEdge</code> that resides in a 
  * directed graph.
@@ -23,7 +25,7 @@ import edu.uci.ics.jung.graph.Vertex;
  * @see DirectedSparseVertex
  * @see DirectedSparseGraph
  */
-public class DirectedSparseEdge extends AbstractSparseEdge implements DirectedEdge {
+public class DirectedSparseEdge extends AbstractSparseEdge implements DirectedEdge, Serializable {
 
     /**
      * Creates a directed edge whose source is <code>from</code> and whose

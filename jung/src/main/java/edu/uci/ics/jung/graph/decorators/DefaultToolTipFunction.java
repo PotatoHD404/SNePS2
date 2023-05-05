@@ -11,6 +11,7 @@
 package edu.uci.ics.jung.graph.decorators;
 
 import java.awt.event.MouseEvent;
+import java.io.Serializable;
 
 import javax.swing.JComponent;
 
@@ -25,7 +26,7 @@ import edu.uci.ics.jung.graph.Vertex;
  *
  * 
  */
-public class DefaultToolTipFunction extends ToolTipFunctionAdapter {
+public class DefaultToolTipFunction extends ToolTipFunctionAdapter implements Serializable {
     /**
      * @param v the Vertex
      * @return toString on the passed Vertex

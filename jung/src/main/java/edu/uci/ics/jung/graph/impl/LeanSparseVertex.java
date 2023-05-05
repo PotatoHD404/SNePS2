@@ -9,6 +9,7 @@
  */
 package edu.uci.ics.jung.graph.impl;
 
+import java.io.Serializable;
 import java.util.*;
 import edu.uci.ics.jung.graph.*;
 
@@ -22,7 +23,7 @@ import edu.uci.ics.jung.graph.*;
  * 
  * @author Joshua O'Madadhain
  */
-public class LeanSparseVertex extends AbstractSparseVertex {
+public class LeanSparseVertex extends AbstractSparseVertex implements Serializable {
 
     protected List incident_edges;
 

@@ -12,6 +12,7 @@
 package edu.uci.ics.jung.graph.decorators;
 
 import java.awt.Paint;
+import java.io.Serializable;
 
 import edu.uci.ics.jung.graph.Edge;
 
@@ -23,7 +24,7 @@ import edu.uci.ics.jung.graph.Edge;
  * 
  * @author Joshua O'Madadhain
  */
-public abstract class AbstractEdgePaintFunction implements EdgePaintFunction
+public abstract class AbstractEdgePaintFunction implements EdgePaintFunction, Serializable
 {
     /**
      * @see EdgePaintFunction#getFillPaint(Edge)

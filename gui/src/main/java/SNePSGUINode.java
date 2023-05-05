@@ -9,7 +9,6 @@ import edu.uci.ics.jung.graph.impl.SparseVertex;
 import edu.uci.ics.jung.utils.UserDataContainer;
 import java.util.Iterator;
 import java.util.Set;
-
 public class SNePSGUINode extends DirectedSparseVertex {
      
     private String node_access;

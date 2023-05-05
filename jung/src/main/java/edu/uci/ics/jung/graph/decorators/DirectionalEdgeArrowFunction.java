@@ -12,6 +12,7 @@
 package edu.uci.ics.jung.graph.decorators;
 
 import java.awt.Shape;
+import java.io.Serializable;
 
 import edu.uci.ics.jung.graph.DirectedEdge;
 import edu.uci.ics.jung.graph.Edge;
@@ -24,7 +25,7 @@ import edu.uci.ics.jung.visualization.ArrowFactory;
  * 
  * @author Joshua O'Madadhain
  */
-public class DirectionalEdgeArrowFunction implements EdgeArrowFunction
+public class DirectionalEdgeArrowFunction implements EdgeArrowFunction, Serializable
 {
     protected Shape undirected_arrow;
     protected Shape directed_arrow;

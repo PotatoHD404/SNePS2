@@ -7,6 +7,7 @@
  */
 package edu.uci.ics.jung.graph.impl;
 
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
@@ -49,7 +50,7 @@ import edu.uci.ics.jung.utils.PredicateUtils;
  */
 public abstract class AbstractSparseGraph
 	extends AbstractArchetypeGraph
-	implements Graph, Cloneable {
+	implements Graph, Cloneable, Serializable {
 
     /**
      * The set of vertices registered with the graph.

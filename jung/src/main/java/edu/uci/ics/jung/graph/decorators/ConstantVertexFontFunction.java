@@ -12,6 +12,7 @@
 package edu.uci.ics.jung.graph.decorators;
 
 import java.awt.Font;
+import java.io.Serializable;
 
 import edu.uci.ics.jung.graph.Vertex;
 
@@ -19,7 +20,7 @@ import edu.uci.ics.jung.graph.Vertex;
  * 
  * @author Joshua O'Madadhain
  */
-public class ConstantVertexFontFunction implements VertexFontFunction
+public class ConstantVertexFontFunction implements VertexFontFunction, Serializable
 {
     protected Font font;
     

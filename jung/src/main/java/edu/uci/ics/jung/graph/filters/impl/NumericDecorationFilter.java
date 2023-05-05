@@ -12,6 +12,8 @@ package edu.uci.ics.jung.graph.filters.impl;
 import edu.uci.ics.jung.graph.Vertex;
 import edu.uci.ics.jung.graph.filters.GeneralVertexAcceptFilter;
 
+import java.io.Serializable;
+
 /**
  * This simple filter accepts vertices if their UserData at the given key is
  * over a threshold value. Note that this depends on user data that
@@ -19,7 +21,7 @@ import edu.uci.ics.jung.graph.filters.GeneralVertexAcceptFilter;
  * 
  * @author Scott White
  */
-public class NumericDecorationFilter extends GeneralVertexAcceptFilter {
+public class NumericDecorationFilter extends GeneralVertexAcceptFilter implements Serializable {
 	private double mThreshold;
 	private String mDecorationKey;
 

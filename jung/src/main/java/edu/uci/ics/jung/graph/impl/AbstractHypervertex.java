@@ -17,6 +17,8 @@ import edu.uci.ics.jung.graph.Hyperedge;
 import edu.uci.ics.jung.graph.Hypergraph;
 import edu.uci.ics.jung.graph.Hypervertex;
 
+import java.io.Serializable;
+
 /**
  * This class provides a skeletal implementation of the <code>Hypervertex</code>
  * interface to minimize the effort required to implement this interface.
@@ -56,7 +58,7 @@ import edu.uci.ics.jung.graph.Hypervertex;
  * 
  * @author Joshua O'Madadhain
  */
-public abstract class AbstractHypervertex extends AbstractArchetypeVertex implements Hypervertex
+public abstract class AbstractHypervertex extends AbstractArchetypeVertex implements Hypervertex, Serializable
 {
     /**
      * The next vertex ID.

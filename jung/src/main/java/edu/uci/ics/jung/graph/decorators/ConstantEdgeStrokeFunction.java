@@ -13,6 +13,7 @@ package edu.uci.ics.jung.graph.decorators;
 
 import java.awt.BasicStroke;
 import java.awt.Stroke;
+import java.io.Serializable;
 
 import edu.uci.ics.jung.graph.Edge;
 
@@ -20,7 +21,7 @@ import edu.uci.ics.jung.graph.Edge;
  * 
  * @author Joshua O'Madadhain
  */
-public class ConstantEdgeStrokeFunction implements EdgeStrokeFunction
+public class ConstantEdgeStrokeFunction implements EdgeStrokeFunction, Serializable
 {
     protected Stroke stroke;
     

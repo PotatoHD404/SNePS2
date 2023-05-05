@@ -11,6 +11,7 @@
  */
 package edu.uci.ics.jung.graph.decorators;
 
+import java.io.Serializable;
 import java.util.Iterator;
 
 import edu.uci.ics.jung.graph.ArchetypeGraph;
@@ -22,7 +23,7 @@ import edu.uci.ics.jung.utils.UserDataContainer.CopyAction;
  * 
  * @author Joshua O'Madadhain
  */
-public class UserDatumNumberVertexValue implements NumberVertexValue
+public class UserDatumNumberVertexValue implements NumberVertexValue, Serializable
 {
     protected Object key;
     protected CopyAction copy_action;
