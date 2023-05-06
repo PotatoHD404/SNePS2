@@ -421,7 +421,7 @@
 
 
   ;;;Create SNePSGUIConstructor
-  (def-java-class (sneps-gui "SNePSGUIShow")
+  (def-java-class (sneps-gui "com.potatohd.SNePSGUIShow")
       () () () ())
 
   ;;;Create and show GUI

@@ -1,10 +1,12 @@
+package com.potatohd;
+
 import edu.uci.ics.jung.graph.Edge;
 import edu.uci.ics.jung.graph.Vertex;
 import edu.uci.ics.jung.graph.decorators.ToolTipFunction;
 import java.awt.event.MouseEvent;
 import javax.swing.JComponent;
 /*
- * SNePSGUIToolTipFunction.java
+ * com.potatohd.SNePSGUIToolTipFunction.java
  *
  * Created on October 25, 2006, 1:17 AM
  *
@@ -18,7 +20,7 @@ import javax.swing.JComponent;
  */
 public class SNePSGUIToolTipFunction implements ToolTipFunction {
     
-    /** Creates a new instance of SNePSGUIToolTipFunction */
+    /** Creates a new instance of com.potatohd.SNePSGUIToolTipFunction */
     public SNePSGUIToolTipFunction() {
     }
     

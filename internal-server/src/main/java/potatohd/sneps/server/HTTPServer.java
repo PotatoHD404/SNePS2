@@ -1,6 +1,10 @@
+package potatohd.sneps.server;
+
+import com.potatohd.SNePSGUIShow;
 import edu.uci.ics.jung.graph.impl.SparseGraph;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
+
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -32,7 +36,7 @@ public class HTTPServer {
         byte[] serializedData = ctx.bodyAsBytes();
         // use gson to convert the byte array to SparseGraph
 //        SparseGraph deserializedObject = objectMapper.readValue(serializedData, SparseGraph.class);
-            SparseGraph deserializedObject = SparseGraph.deserializeObject(serializedData);
+        SparseGraph deserializedObject = SparseGraph.deserializeObject(serializedData);
         System.out.println("Deserialized object");
 //        System.out.println(serializedData.length);
 //        deserializedObject.getVertices().forEach(v -> System.out.println(v));

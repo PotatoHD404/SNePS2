@@ -1,3 +1,5 @@
+package com.potatohd;
+
 import edu.uci.ics.jung.graph.Vertex;
 import edu.uci.ics.jung.graph.decorators.VertexShapeFunction; 
 import java.awt.Polygon; 
@@ -6,7 +8,7 @@ import java.awt.Shape;
 import java.awt.geom.Ellipse2D; 
 import java.awt.geom.RoundRectangle2D; 
 /* 
- * SNePSNodeShapeFunction.java 
+ * com.potatohd.SNePSNodeShapeFunction.java
  * 
  * Created on September 27, 2006, 10:02 PM 
  * 
@@ -20,7 +22,7 @@ import java.awt.geom.RoundRectangle2D;
  */ 
 public class SNePSNodeShapeFunction implements VertexShapeFunction { 
      
-    /** Creates a new instance of SNePSNodeShapeFunction */ 
+    /** Creates a new instance of com.potatohd.SNePSNodeShapeFunction */
     public SNePSNodeShapeFunction() { 
     } 
  

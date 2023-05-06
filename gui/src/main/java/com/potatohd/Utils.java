@@ -1,10 +1,10 @@
-/**
+package com.potatohd; /**
  *
  * @author Michael Kandefer
  */
 import java.io.File;
 
-/* Utils.java is used by FileChooserDemo2.java. */
+/* com.potatohd.Utils.java is used by FileChooserDemo2.java. */
 public class Utils {
     public final static String snepslog = "snepslog";
     public final static String sneps = "sneps";

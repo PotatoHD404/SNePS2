@@ -1,9 +1,11 @@
+package com.potatohd;
+
 import edu.uci.ics.jung.graph.Vertex;
 import edu.uci.ics.jung.graph.decorators.VertexPaintFunction;
 import java.awt.Color;
 import java.awt.Paint;
 /*
- * SNePSNodeColorFunction.java
+ * com.potatohd.SNePSNodeColorFunction.java
  *
  * Created on September 27, 2006, 10:03 PM
  *
@@ -17,7 +19,7 @@ import java.awt.Paint;
  */
 public class SNePSNodeColorFunction implements VertexPaintFunction {
     
-    /** Creates a new instance of SNePSNodeColorFunction */
+    /** Creates a new instance of com.potatohd.SNePSNodeColorFunction */
     public SNePSNodeColorFunction(){
         
     }
