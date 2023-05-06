@@ -12,20 +12,20 @@
 ;;; The contents of this file are subject to the University at
 ;;; Buffalo Public License Version 1.0 (the "License"); you may
 ;;; not use this file except in compliance with the License. You
-;;; may obtain a copy of the License at
+;;; may obtain a copy of the License at 
 ;;; http://www.cse.buffalo. edu/sneps/Downloads/ubpl.pdf.
-;;;
+;;; 
 ;;; Software distributed under the License is distributed on an
 ;;; "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express
 ;;; or implied. See the License for the specific language gov
 ;;; erning rights and limitations under the License.
-;;;
+;;; 
 ;;; The Original Code is SNePS 2.8.
-;;;
+;;; 
 ;;; The Initial Developer of the Original Code is Research Foun
 ;;; dation of State University of New York, on behalf of Univer
 ;;; sity at Buffalo.
-;;;
+;;; 
 ;;; Portions created by the Initial Developer are Copyright (C)
 ;;; 2011 Research Foundation of State University of New York, on
 ;;; behalf of University at Buffalo. All Rights Reserved.
@@ -93,11 +93,11 @@
 
 ;; Installation instructions:
 
-;; - Edit `*sneps-config-file*' (below) to reflect the location of the sneps
+;; - Edit `*sneps-config-file*' (below) to reflect the location of the sneps 
 ;;   configuration file (sneps_config.config). The config file has instructions
 ;;   on expected modifications.
 
-;; - (Optional - Allegro user only)
+;; - (Optional - Allegro user only) 
 ;;   Edit the JavaSnepsAPI/java_sneps_config.config file
 ;;   if use of the API is desired. Also edit the Jlinker/jl-config.cl file
 ;;   in the sneps home directory. This wfile will ask you to configure
@@ -109,13 +109,13 @@
 ;;   (renaming Lisp files is not mandatory even if your Common-Lisp does not
 ;;   use `.lisp' as its default extension).
 ;; - Invoke your Common-Lisp and load this file.
-;; - For first time installation, set *sneps-noquery* to 'nil' in the config
-;;   file
+;; - For first time installation, set *sneps-noquery* to 'nil' in the config 
+;;   file 
 ;; - Select option `e' (the installation option) from the initial menu.
 ;; - Ignore all the warnings you'll get during compilation.
 ;; - If the compilation completed successfully then you are done with the
 ;;   installation, exit your Common-Lisp
-;; - Optionally set `*sneps-noquery*' (config file) to T and
+;; - Optionally set `*sneps-noquery*' (config file) to T and 
 ;;   `*sneps-verbose*' to NIL
 ;; - To load SNePS simply load this file and select option `a' from the
 ;;   initial menu (if you set `*sneps-noquery*' to T you won't be asked).
@@ -125,10 +125,10 @@
 ;;   have proper values for your Common-Lisp
 
 
-;;; altered for  ACL 6 compatibility (FLJ)
+;;; altered for  ACL 6 compatibility (FLJ)  
 
 #+(and allegro-version>= (version>= 6 0))
-(progn
+(progn 
   (setf *pre-sneps-load-case-mode* excl:*current-case-mode*)
   (setf *pre-sneps-load-print-case-mode* *print-case*)
   (case  *current-case-mode*
@@ -144,7 +144,7 @@
     (:case-insensitive-upper
      (setf *print-case* :upcase)
      (setf excl::*ignore-package-name-case* t)
-     (excl::convert-mixed-case-symbols t))
+     (excl::convert-mixed-case-symbols t)) 
     ))
 
 
@@ -555,28 +555,31 @@ the api is to connect to, starts the JavaSnepsAPI"
 
 ;;; Only needed for the exe, which is allegro only
 #+allegro
-(defun start-exe-top-level ()
-  "Initiates the toplevel interaction, needed for the executeable."
-  (set-and-load-config)
-  (set-logical-pathname-globals)
-  (load (format nil "~A/load-logical-pathnames.~A" *sneps-directory* *sneps-default-lisp-extension*))
-  (check-and-start-java-sneps-api)
-  (format *standard-output* "~&~a loaded.~
-           ~%Type `(sneps)' or `(snepslog)' to get started."
-	  *sneps-version*)
-  (tpl:start-interactive-top-level *terminal-io*
-				   #'tpl:top-level-read-eval-print-loop
-				   nil))
+;;; Only needed for the exe, which is allegro only
+;; #+allegro
+;; (defun start-exe-top-level ()
+;;  "Initiates the toplevel interaction, needed for the executeable."
+;;  (set-and-load-config)
+;;  (set-logical-pathname-globals)
+;;  (load (format nil "~A/load-logical-pathnames.~A" *sneps-directory* *sneps-default-lisp-extension*))
+;;  (check-and-start-java-sneps-api)
+;;  (format *standard-output* "~&~a loaded.~
+;;           ~%Type `(sneps)' or `(snepslog)' to get started."
+;;	  *sneps-version*)
+;;  (tpl:start-interactive-top-level *terminal-io*
+;;				   #'tpl:top-level-read-eval-print-loop
+;;				   nil))
 
 
-(format t "~&~a loaded.~
-           ~%Type `(sneps)' or `(snepslog)' to get started."
-	*sneps-version*)
+;; (format t "~&~a loaded.~
+;;           ~%Type `(sneps)' or `(snepslog)' to get started."
+;;	*sneps-version*)
 
 
+(load "/app/sneps/snepslog-helper.lisp")
+(snepslog-helper:run-demo)
 
-
-
+    
 
 
 

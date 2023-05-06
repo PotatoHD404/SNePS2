@@ -10,12 +10,26 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         build-essential \
         curl \
+        wget \
+        libncurses-dev \
+        libc6-dev \
         git \
 #     Install Common Lisp (SBCL) here
-        sbcl \
         openjdk-11-jdk-headless \
         rlwrap \
     && rm -rf /var/lib/apt/lists/*
+
+# Set environment variables
+ENV ALLEGRO_CL_VERSION 10.1
+ENV ALLEGRO_CL_FILE acl${ALLEGRO_CL_VERSION}express-linux-x64.tbz2
+ENV ALLEGRO_CL_URL https://franz.com/ftp/pub/acl${ALLEGRO_CL_VERSION}express/linuxamd64.64/${ALLEGRO_CL_FILE}
+
+# Download and install Allegro Common Lisp Express
+RUN wget --no-check-certificate ${ALLEGRO_CL_URL}
+RUN tar jxf ${ALLEGRO_CL_FILE} -C /usr/local && \
+        rm ${ALLEGRO_CL_FILE} && \
+        ln -s /usr/local/acl${ALLEGRO_CL_VERSION}express.64/alisp /usr/local/bin/alisp
+
 
 # Optional: Install Quicklisp for easier Common Lisp package management
 #RUN curl -o /tmp/quicklisp.lisp https://beta.quicklisp.org/quicklisp.lisp && \

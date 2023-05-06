@@ -7,7 +7,7 @@
  ;; the source version of SNePS, this is the directory that contains 
  ;; load-sneps.lisp. This variable must be specified.
  
- *sneps-directory* "app/sneps"
+ *sneps-directory* "/app/sneps"
 
  ;; *use-gui-show* specifies whether to use the GUI version of show or the dot 
  ;; version of show. A value of 't' specifies the GUI, while 'nil' specifies 
@@ -91,6 +91,7 @@
  ;; Defaults to ".lisp". This is not needed by the SNePS executeable.
  ;;
  ;; *sneps-default-lisp-extension* "lisp"
+ *sneps-lisp-extension* "lisp"
 
  ;; *sneps-binary-extension* specifies the compiled extension for lisp files. 
  ;; Defaults  based on current lisp implementation running. Not required by 
@@ -106,20 +107,20 @@
  ;; *sneps-verbose* specifies verbose loading of SNePS files
  ;; Default to 'nil'
  ;;
- ;; *sneps-verbose* nil
+ *sneps-verbose* nil
  
  ;; *sneps-load-old-englex*: If this is T the old englex package is loaded 
  ;; instead of Chris Lusardi's new implementation (for compatibility with old 
  ;; stuff). Not needed by the SNePS executable
  ;;
- ;; *sneps-load-old-englex* nil
+ *sneps-load-old-englex* nil
  
  ;; *sneps-user-translations*: List of user supplied logical pathname 
  ;; translations.
  ;; Changing the value of this variable after this file was loaded
  ;; will not have any effect."
  ;;
- ;; *sneps-user-translations* nil
+ *sneps-user-translations* nil
 
  ;; *sneps-use-lpmk*: If non-NIL Mark Kantrowitz's logical pathnames package 
  ;; is used. This should only be non-NIL if there is no native implementation 
@@ -138,12 +139,13 @@
  ;; executeable.
  ;;
  ;; *sneps-use-lpmk* (not (fboundp 'translate-logical-pathname))
+ *sneps-use-lpmk* nil
 
  ;; *sneps-debug*: Set 'nil' for compiled code that is faster, but harder to 
  ;; debug. Set 't' for compiled code that is easier to debug, but slower.
  ;; Not needed by the SNePS executeable
  ;;
- ;;*sneps-debug* nil
+ *sneps-debug* nil
 
 )
 ;; (load "/app/sneps/snepslog-helper.lisp")
