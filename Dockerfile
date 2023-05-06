@@ -10,6 +10,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         build-essential \
         curl \
+        git \
 #     Install Common Lisp (SBCL) here
         sbcl \
         openjdk-11-jdk-headless \
@@ -27,14 +28,26 @@ RUN apt-get update && \
 # Set working directory
 WORKDIR /app
 
-# Copy your project files into the container (optional)
-COPY "./Sneps-2.7.0" /app/sneps
+# clone https://github.com/SNePS/SNePS2.git into /app/sneps
 
-COPY /out/artifacts/internal_server_jar/internal-server.jar /app/internal-server.jar
+RUN git clone https://github.com/SNePS/SNePS2.git /app/sneps
+
+# Copy your project files into the container (optional)
+#COPY "./Sneps-2.7.0" "/app/sneps"
+
+COPY "/out/artifacts/internal_server_jar/internal-server.jar" "/app/internal-server.jar"
 
 COPY "/out/artifacts/jung_jar/jung-1.7.6.jar" "/app/sneps/SnepsGUI/SnepsGUIMods/JungFiles/JUNG/jung-1.7.6/jung-1.7.6.jar"
 
-COPY /out/artifacts/SNePSGUIShow_jar/SNePSGUIShow.jar /app/sneps/SnepsGUI/SNePSGUIShow.jar
+COPY "/out/artifacts/SNePSGUIShow_jar/SNePSGUIShow.jar" "/app/sneps/SnepsGUI/SNePSGUIShow.jar"
+
+COPY "/Sneps-2.7.0/load-sneps.lisp" "/app/sneps/load-sneps.lisp"
+
+COPY "/Sneps-2.7.0/sneps_config.lisp" "/app/sneps/sneps_config.lisp"
+
+COPY "/Sneps-2.7.0/snepslog-helper.lisp" "/app/sneps/snepslog-helper.lisp"
+
+COPY "/Sneps-2.7.0/Jlinker/jl-config.cl" "/app/sneps/Jlinker/jl-config.cl"
 
 # Expose any necessary ports (optional)
 EXPOSE 7000

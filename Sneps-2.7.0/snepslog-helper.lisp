@@ -1,14 +1,11 @@
 (defpackage :snepslog-helper
-  (:use :common-lisp :excl)
+  (:use :common-lisp)
+;;  (:import-from :snepslog :tell)
+;;  (:import-from :sneps :show)
   (:export :run-demo))
 
 (in-package :snepslog-helper)
 
-(defun run-snepslog-demo ()
-    (snepslog:tell "(\~p <=> q) <=> (p <=> ~q)?")
-
-
-    (sneps:show))
-
 (defun run-demo ()
-  (run-snepslog-demo))
+    (snepslog:tell "(\~p <=> q) <=> (p <=> ~q)?")
+    (sneps:show))

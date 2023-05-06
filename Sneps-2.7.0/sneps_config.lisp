@@ -146,5 +146,5 @@
  ;;*sneps-debug* nil
 
 )
-(load "snepslog-helper.lisp")
-(snepslog-helper:run-demo)
+;; (load "/app/sneps/snepslog-helper.lisp")
+;; (snepslog-helper:run-demo)
