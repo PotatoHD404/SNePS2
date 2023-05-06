@@ -10,7 +10,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         build-essential \
         curl \
-        sbcl \
+        sbcl \ # Install Common Lisp (SBCL) here \
         openjdk-11-jdk-headless \
         rlwrap \
     && rm -rf /var/lib/apt/lists/*
@@ -27,10 +27,16 @@ RUN curl -o /tmp/quicklisp.lisp https://beta.quicklisp.org/quicklisp.lisp && \
 WORKDIR /app
 
 # Copy your project files into the container (optional)
-COPY . /app
+COPY "./Sneps-2.7.0" /app/sneps
+
+COPY /out/artifacts/internal_server_jar/internal-server.jar /app/internal-server.jar
+
+COPY "/out/artifacts/jung_jar/jung-1.7.6.jar" "/app/sneps/SnepsGUI/SnepsGUIMods/JungFiles/JUNG/jung-1.7.6/jung-1.7.6.jar"
+
+COPY /out/artifacts/SNePSGUIShow_jar/SNePSGUIShow.jar /app/sneps/SnepsGUI/SNePSGUIShow.jar
 
 # Expose any necessary ports (optional)
 EXPOSE 7000
 
 # Set the command to run when starting the container
-CMD ["bash"]
+CMD ["java", "-jar", "internal-server.jar"]
