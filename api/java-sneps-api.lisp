@@ -421,7 +421,7 @@
 
 
   ;;;Create SNePSGUIConstructor
-  (def-java-class (sneps-gui "com.potatohd.SNePSGUIShow")
+  (def-java-class (sneps-gui "com.potatohd.gui.SNePSGUIShow")
       () () () ())
 
   ;;;Create and show GUI
@@ -433,8 +433,8 @@
 ;;;Create and describe the classes jlinker needs to work with
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;;;Create SNePSGUINode and SNePSGUIArc Constructors (and general edge/vertex)
-  (def-java-class (sneps-gui-node "SNePSGUINode") ()
+;;;Create com.potatohd.gui.SNePSGUINode and com.potatohd.gui.SNePSGUIArc Constructors (and general edge/vertex)
+  (def-java-class (sneps-gui-node "com.potatohd.gui.SNePSGUINode") ()
     (((gsn-mol "MOL") :reader gsn-mol)
      ((gsn-base "BASE") :reader gsn-base)
      ((gsn-var "VAR") :reader gsn-var)
@@ -442,18 +442,18 @@
     () ())
 
   (def-java-class (vertex "edu.uci.ics.jung.graph.Vertex") () () () ())
-  (def-java-class (sneps-gui-arc "SNePSGUIArc")
+  (def-java-class (sneps-gui-arc "com.potatohd.gui.SNePSGUIArc")
       () () () ())
   (def-java-class (edge "edu.uci.ics.jung.graph.Edge") () () () ())
 
-;;;SNePSGUINode(node_access, description, snepslog)
+;;;com.potatohd.gui.SNePSGUINode(node_access, description, snepslog)
   (def-java-constructor new-sneps-gui-node
       (sneps-gui-node "java.lang.String" "java.lang.String"
 		      "java.lang.String" "int"))
 
-;;;SNePSGUIArc(arc_label, from_node, to_node)
+;;;com.potatohd.gui.SNePSGUIArc(arc_label, from_node, to_node)
   (def-java-constructor new-sneps-gui-arc
-      (sneps-gui-arc "java.lang.String" "SNePSGUINode" "SNePSGUINode"))
+      (sneps-gui-arc "java.lang.String" "com.potatohd.gui.SNePSGUINode" "com.potatohd.gui.SNePSGUINode"))
 
 ;;;Create SparseGraph constructor and methods
   (def-java-class

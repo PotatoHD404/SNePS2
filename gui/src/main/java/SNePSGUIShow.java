@@ -1,4 +1,4 @@
-public class SNePSGUIShow extends com.potatohd.SNePSGUIShow {
+public class SNePSGUIShow extends com.potatohd.gui.SNePSGUIShow {
     /**
      * Creates new form SNePSGUI
      *

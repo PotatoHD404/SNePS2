@@ -1,52 +1,62 @@
 package potatohd.sneps.server;
 
-import com.potatohd.SNePSGUIShow;
-import edu.uci.ics.jung.graph.impl.SparseGraph;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 
 
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.io.IOException;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class HTTPServer {
-    public static SNePSGUIShow gui = new SNePSGUIShow(false);
+
+    private static CountDownLatch objectReceivedLatch;
+    private static final AtomicReference<byte[]> receivedBytes = new AtomicReference<>();
+    private static final Semaphore snepslogSemaphore = new Semaphore(1);
 
     public static void main(String[] args) {
-        gui.setVisible(true);
+
         Javalin app = Javalin.create().start(7000);
-        gui.addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                super.windowClosing(e);
-                app.close();
-                System.exit(0);
-            }
-        });
+
 
         app.get("/", ctx -> ctx.result("Hello World"));
+        app.post("/snepslog", HTTPServer::handleRequestSnepslog);
         app.post("/api/transfer/object", HTTPServer::receiveSerializedObject);
-
     }
 
-    private static void receiveSerializedObject(Context ctx) throws IOException, ClassNotFoundException {
+    private static void handleRequestSnepslog(Context ctx) throws InterruptedException {
+        // Acquire the semaphore to handle only one /snepslog call at a time
+        snepslogSemaphore.acquire();
+
+        // Start the process here
+        // ...
+
+        // Initialize the CountDownLatch and wait for the object to be received
+        objectReceivedLatch = new CountDownLatch(1);
+        objectReceivedLatch.await();
+
+        // Return the received bytes in the response
+        byte[] responseBytes = receivedBytes.get();
+        if (responseBytes != null) {
+            ctx.status(200).result(responseBytes);
+        } else {
+            ctx.status(400).result("Failed to receive object");
+        }
+
+        // Release the semaphore to allow handling the next /snepslog call
+        snepslogSemaphore.release();
+    }
+
+    private static void receiveSerializedObject(Context ctx) {
         System.out.println("Received object");
-//        try {
         byte[] serializedData = ctx.bodyAsBytes();
-        // use gson to convert the byte array to SparseGraph
-//        SparseGraph deserializedObject = objectMapper.readValue(serializedData, SparseGraph.class);
-        SparseGraph deserializedObject = SparseGraph.deserializeObject(serializedData);
-        System.out.println("Deserialized object");
-//        System.out.println(serializedData.length);
-//        deserializedObject.getVertices().forEach(v -> System.out.println(v));
-        gui.displayNetwork1(deserializedObject);
+        System.out.println("Serialized data received");
+
+        // Set the received bytes and count down the latch
+        receivedBytes.set(serializedData);
+        objectReceivedLatch.countDown();
+
         ctx.status(200).result("Object received successfully");
         System.out.println("Object received successfully");
-//        } catch (IOException | ClassNotFoundException e) {
-//            ctx.status(400).result("Failed to deserialize object");
-//        }
     }
-
-    // The deserializeObject method shown in the previous answer
 }

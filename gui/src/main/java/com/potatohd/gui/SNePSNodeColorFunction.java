@@ -1,4 +1,4 @@
-package com.potatohd;
+package com.potatohd.gui;
 
 import edu.uci.ics.jung.graph.Vertex;
 import edu.uci.ics.jung.graph.decorators.VertexPaintFunction;

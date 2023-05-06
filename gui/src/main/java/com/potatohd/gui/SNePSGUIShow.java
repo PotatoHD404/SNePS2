@@ -1,4 +1,4 @@
-package com.potatohd; /**
+package com.potatohd.gui; /**
  * @author Michael Kandefer
  */
 
