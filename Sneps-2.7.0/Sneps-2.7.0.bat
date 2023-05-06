@@ -5,4 +5,4 @@
 :: following line to point to the sneps_config.lisp file
 ::
 
-Sneps-2.7.exe --noinform -- -config-file sneps_config.lisp
+Sneps-2.7.exe -- -config-file sneps_config.lisp

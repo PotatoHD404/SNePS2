@@ -50,8 +50,9 @@
 ;;      Step A.1: Modify the string "???" to the path of the Java
 ;;                installation in your machine.
 ;;      Step A.2: Uncomment the next line.
-(setf javatools.jlinker:*jlinker-java-home* "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin")
-(setf javatools.jlinker:*jni-library* "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot\\bin\\server\\jvm.dll")
+;; set docker linux java home
+(setf javatools.jlinker:*jlinker-java-home* "/usr/lib/jvm/java-11-openjdk-amd64")
+(setf javatools.jlinker:*jni-library* "/usr/lib/jvm/java-11-openjdk-amd64/lib/server/libjvm.so")
 
 (setf *site-keyword*
 	  ;; normalize the machine name to a keyword 

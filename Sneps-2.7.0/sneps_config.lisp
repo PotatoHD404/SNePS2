@@ -7,7 +7,7 @@
  ;; the source version of SNePS, this is the directory that contains 
  ;; load-sneps.lisp. This variable must be specified.
  
- *sneps-directory* "C:\\KR Systems\\sneps\\Sneps-2.7.0"
+ *sneps-directory* "app/sneps"
 
  ;; *use-gui-show* specifies whether to use the GUI version of show or the dot 
  ;; version of show. A value of 't' specifies the GUI, while 'nil' specifies 
@@ -26,7 +26,7 @@
  ;; system's CLASSPATH environment variable is set up to include the directory 
  ;; already.
 
- *jung-directory* "C:\\KR Systems\\sneps\\Sneps-2.7.0\\SnepsGUI\\SnepsGUIMods\\JungFiles\\JUNG\\jung-1.7.6"
+ *jung-directory* "app/sneps/SnepsGUI/SnepsGUIMods/JungFiles/Jung"
 
 
  ;; *colt-directory* specifies the directory containing the colt.jar and
@@ -35,7 +35,7 @@
  ;; system's CLASSPATH environment variable is set up to include the directory 
  ;; already.
 
- *colt-directory* "C:\\KR Systems\\sneps\\Sneps-2.7.0\\SnepsGUI\\SnepsGUIMods\\JungFiles\\Colt\\lib"
+ *colt-directory* "app/sneps/SnepsGUI/SnepsGUIMods/JungFiles/Colt"
 
 
  ;; *xerces-directory* specifies the directory containing the resolver.jar,
@@ -45,7 +45,7 @@
  ;; system's CLASSPATH environment variable is set up to include the directory 
  ;; already.
 
- *xerces-directory* "C:\\KR Systems\\sneps\\Sneps-2.7.0\\SnepsGUI\\SnepsGUIMods\\JungFiles\\Xerxes"
+ *xerces-directory* "app/sneps/SnepsGUI/SnepsGUIMods/JungFiles/Xerces"
 
  ;; *commons-directory* specifies the directory containing the 
  ;; commons-collections-3.2.jar and commons-collections-testframework-3.2.jar 
@@ -55,7 +55,7 @@
  ;; system's CLASSPATH environment variable is set up to include the directory 
  ;; already.
 
- *commons-directory* "C:\\KR Systems\\sneps\\Sneps-2.7.0\\SnepsGUI\\SnepsGUIMods\\JungFiles\\Commons"
+ *commons-directory* "app/sneps/SnepsGUI/SnepsGUIMods/JungFiles/Commons"
 
  ;; *jimi-directory* specifies the directory containing the jimi-1.0.jar
  ;; file, which is part of the JIMI software package. 
@@ -64,7 +64,7 @@
  ;; system's CLASSPATH environment variable is set up to include the directory 
  ;; already.
 
- *jimi-directory* "C:\\KR Systems\\sneps\\Sneps-2.7.0\\SnepsGUI\\SnepsGUIMods\\Jimi"
+ *jimi-directory* "app/sneps/SnepsGUI/SnepsGUIMods/JungFiles/Jimi"
 
  ;; *eps-dump-directory* specifies the directory containing the dump.jar
  ;; file, which is part of the EPSDump software package. 
@@ -72,7 +72,7 @@
  ;; if your system does not have the package, setting this path to 'nil'
  ;; will prevent the system from expecting the package.
 
- *eps-dump-directory* "C:\\KR Systems\\sneps\\Sneps-2.7.0\\SnepsGUI\\SnepsGUIMods\\JungFiles\\EPSComponentDump"
+ *eps-dump-directory* "app/sneps/SnepsGUI/SnepsGUIMods/JungFiles/EPSDump"
 
  ;; *force-jlinker-config*: On windows paltforms jlinker attempts to configure
  ;; itself by inspecting the Windows registery. This should be sufficient for
