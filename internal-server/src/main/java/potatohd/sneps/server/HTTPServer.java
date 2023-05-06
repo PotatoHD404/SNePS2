@@ -71,7 +71,7 @@ public class HTTPServer {
         // run command that starts snepslog
         System.out.println("Running snepslog");
 //        Sneps-2.7.0 -- -config-file sneps_config.lisp
-        ProcessBuilder pb = new ProcessBuilder("/app/Sneps-2.7.0", "--", "-config-file", "/app/sneps_config.lisp");
+        ProcessBuilder pb = new ProcessBuilder("/app/sneps/Sneps-2.7.0", "--", "-config-file", "/app/sneps_config.lisp");
         pb.redirectErrorStream(true);
         Process p = pb.start();
         p.waitFor();

@@ -10,18 +10,19 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         build-essential \
         curl \
-        sbcl \ # Install Common Lisp (SBCL) here \
+#     Install Common Lisp (SBCL) here
+        sbcl \
         openjdk-11-jdk-headless \
         rlwrap \
     && rm -rf /var/lib/apt/lists/*
 
 # Optional: Install Quicklisp for easier Common Lisp package management
-RUN curl -o /tmp/quicklisp.lisp https://beta.quicklisp.org/quicklisp.lisp && \
-    sbcl --load /tmp/quicklisp.lisp \
-         --eval '(quicklisp-quickstart:install)' \
-         --eval '(ql:add-to-init-file)' \
-         --eval '(quit)' && \
-    rm /tmp/quicklisp.lisp
+#RUN curl -o /tmp/quicklisp.lisp https://beta.quicklisp.org/quicklisp.lisp && \
+#    sbcl --load /tmp/quicklisp.lisp \
+#         --eval '(quicklisp-quickstart:install)' \
+#         --eval '(ql:add-to-init-file)' \
+#         --eval '(quit)' && \
+#    rm /tmp/quicklisp.lisp
 
 # Set working directory
 WORKDIR /app
