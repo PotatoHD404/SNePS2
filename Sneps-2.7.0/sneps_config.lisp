@@ -7,12 +7,12 @@
  ;; the source version of SNePS, this is the directory that contains 
  ;; load-sneps.lisp. This variable must be specified.
  
- *sneps-directory* "app/sneps"
+ *sneps-directory* "C:\\app\\sneps"
 
  ;; *use-gui-show* specifies whether to use the GUI version of show or the dot 
  ;; version of show. A value of 't' specifies the GUI, while 'nil' specifies 
  ;; dot. Commenting this out defualts to 't'. Non-windows users will
- ;; have to edit the Jlinker/jl-config.cl file in the sneps-directory,
+ ;; have to edit the Jlinker\\jl-config.cl file in the sneps-directory,
  ;; which asks the user to point jlinker to the java home directory. Java
  ;; version 1.5 or greater is needed to run the GUI.
  
@@ -26,7 +26,7 @@
  ;; system's CLASSPATH environment variable is set up to include the directory 
  ;; already.
 
- *jung-directory* "app/sneps/SnepsGUI/SnepsGUIMods/JungFiles/Jung"
+ *jung-directory* "C:\\app\\sneps\\SnepsGUI\\SnepsGUIMods\\JungFiles\\Jung"
 
 
  ;; *colt-directory* specifies the directory containing the colt.jar and
@@ -35,7 +35,7 @@
  ;; system's CLASSPATH environment variable is set up to include the directory 
  ;; already.
 
- *colt-directory* "app/sneps/SnepsGUI/SnepsGUIMods/JungFiles/Colt"
+ *colt-directory* "C:\\app\\sneps\\SnepsGUI\\SnepsGUIMods\\JungFiles\\Colt"
 
 
  ;; *xerces-directory* specifies the directory containing the resolver.jar,
@@ -45,7 +45,7 @@
  ;; system's CLASSPATH environment variable is set up to include the directory 
  ;; already.
 
- *xerces-directory* "app/sneps/SnepsGUI/SnepsGUIMods/JungFiles/Xerces"
+ *xerces-directory* "C:\\app\\sneps\\SnepsGUI\\SnepsGUIMods\\JungFiles\\Xerces"
 
  ;; *commons-directory* specifies the directory containing the 
  ;; commons-collections-3.2.jar and commons-collections-testframework-3.2.jar 
@@ -55,7 +55,7 @@
  ;; system's CLASSPATH environment variable is set up to include the directory 
  ;; already.
 
- *commons-directory* "app/sneps/SnepsGUI/SnepsGUIMods/JungFiles/Commons"
+ *commons-directory* "C:\\app\\sneps\\SnepsGUI\\SnepsGUIMods\\JungFiles\\Commons"
 
  ;; *jimi-directory* specifies the directory containing the jimi-1.0.jar
  ;; file, which is part of the JIMI software package. 
@@ -64,7 +64,7 @@
  ;; system's CLASSPATH environment variable is set up to include the directory 
  ;; already.
 
- *jimi-directory* "app/sneps/SnepsGUI/SnepsGUIMods/JungFiles/Jimi"
+ *jimi-directory* "C:\\app\\sneps\\SnepsGUI\\SnepsGUIMods\\JungFiles\\Jimi"
 
  ;; *eps-dump-directory* specifies the directory containing the dump.jar
  ;; file, which is part of the EPSDump software package. 
@@ -72,7 +72,7 @@
  ;; if your system does not have the package, setting this path to 'nil'
  ;; will prevent the system from expecting the package.
 
- *eps-dump-directory* "app/sneps/SnepsGUI/SnepsGUIMods/JungFiles/EPSDump"
+ *eps-dump-directory* "C:\\app\\sneps\\SnepsGUI\\SnepsGUIMods\\JungFiles\\EpsDump"
 
  ;; *force-jlinker-config*: On windows paltforms jlinker attempts to configure
  ;; itself by inspecting the Windows registery. This should be sufficient for

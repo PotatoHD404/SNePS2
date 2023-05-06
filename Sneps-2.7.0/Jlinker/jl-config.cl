@@ -51,8 +51,8 @@
 ;;                installation in your machine.
 ;;      Step A.2: Uncomment the next line.
 ;; set docker linux java home
-(setf javatools.jlinker:*jlinker-java-home* "/usr/lib/jvm/java-11-openjdk-amd64")
-(setf javatools.jlinker:*jni-library* "/usr/lib/jvm/java-11-openjdk-amd64/lib/server/libjvm.so")
+;; (setf javatools.jlinker:*jlinker-java-home* "/usr/lib/jvm/java-11-openjdk-amd64")
+;; (setf javatools.jlinker:*jni-library* "/usr/lib/jvm/java-11-openjdk-amd64/lib/server/libjvm.so")
 
 (setf *site-keyword*
 	  ;; normalize the machine name to a keyword 
