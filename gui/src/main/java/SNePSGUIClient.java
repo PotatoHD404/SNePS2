@@ -66,6 +66,17 @@ public class SNePSGUIClient {
                 }
                 byte[] responseBytes = output.toByteArray();
                 SparseGraph deserializedObject = SparseGraph.deserializeObject(responseBytes);
+
+                deserializedObject.getVertices().forEach(v -> {
+                    SNePSGUINode v1 = (SNePSGUINode) v;
+                    String name = v1.getNodeAccess();
+                    name = name.replace("SNEPSUL::", "");
+                    name = name.replace("SNEPSLOG::", "");
+                    name = name.replace("SNEPS::", "");
+                    name = name.replace("ENGLEX:", "");
+                    v1.setNodeAccess(name);
+                    System.out.println(v1.detailedPrint());
+                });
                 gui.displayNetwork1(deserializedObject);
                 System.out.println("Deserialized object: " + deserializedObject);
             } else {
