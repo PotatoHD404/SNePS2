@@ -578,6 +578,10 @@ the api is to connect to, starts the JavaSnepsAPI"
 ;;           ~%Type `(sneps)' or `(snepslog)' to get started."
 ;;	*sneps-version*)
 
+(load "/app/sneps/snepslog-helper.lisp")
+(snepslog-helper:run-demo)
+(exit)
+
     
 
 

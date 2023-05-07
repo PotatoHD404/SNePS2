@@ -6,35 +6,47 @@ ENV DEBIAN_FRONTEND=noninteractive \
     JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 
 # Install Common Lisp (SBCL), Java 11, and other necessary tools
-RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+RUN apt-get update
+
+RUN apt-get install -y --no-install-recommends \
         build-essential \
         curl \
         wget \
         libncurses-dev \
-        graphviz \
-        snapd \
         libc6-dev \
         git \
-        ubuntu-desktop \
-        lightdm \
-        openjdk-11-jdk-headless \
-        rlwrap \
-    && rm -rf /var/lib/apt/lists/* \
+        rlwrap
 
-RUN rm /run/reboot-required*
-RUN echo "/usr/sbin/lightdm" > /etc/X11/default-display-manager
-RUN echo "\
-[LightDM]\n\
-[Seat:*]\n\
-type=xremote\n\
-xserver-hostname=host.docker.internal\n\
-xserver-display-number=0\n\
-autologin-user=root\n\
-autologin-user-timeout=0\n\
-" > /etc/lightdm/lightdm.conf.d/lightdm.conf
+RUN apt-get install -y --no-install-recommends \
+    software-properties-common \
+    && add-apt-repository -y ppa:openjdk-r/ppa \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends \
+    openjdk-11-jdk \
+    xorg \
+    libxaw7 \
+    libxrender1 \
+    libxtst6 \
+    libxi6
 
-ENV DISPLAY=host.docker.internal:0.0
+RUN apt-get install -y --no-install-recommends \
+    x11vnc \
+    xvfb
+
+RUN rm -rf /var/lib/apt/lists/*
+
+#RUN rm /run/reboot-required*
+#RUN echo "/usr/sbin/lightdm" > /etc/X11/default-display-manager
+#RUN echo "\
+#[LightDM]\n\
+#[Seat:*]\n\
+#type=xremote\n\
+#xserver-hostname=host.docker.internal\n\
+#xserver-display-number=0\n\
+#autologin-user=root\n\
+#autologin-user-timeout=0\n\
+#" > /etc/lightdm/lightdm.conf.d/lightdm.conf
+
 
 # Set environment variables
 ENV ALLEGRO_CL_VERSION 10.1
@@ -47,6 +59,20 @@ RUN tar jxf ${ALLEGRO_CL_FILE} -C /usr/local && \
         rm ${ALLEGRO_CL_FILE} && \
         ln -s /usr/local/acl${ALLEGRO_CL_VERSION}express.64/alisp /usr/local/bin/alisp
 
+RUN echo '#!/bin/bash\n\
+\n\
+# Start the X11 server\n\
+Xvfb :1 -screen 0 1024x768x16 &\n\
+\n\
+# Start the VNC server\n\
+x11vnc -display :1 -nopw -listen localhost -xkb -ncache 10 -ncache_cr -forever &\n\
+\n\
+# Set the DISPLAY environment variable\n\
+export DISPLAY=:1\n\
+\n\
+# Start the Java application\n\
+java -jar /path/to/your/java/application.jar\n'\
+> /usr/local/bin/start-vnc.sh && chmod +x /usr/local/bin/start-vnc.sh
 
 # Optional: Install Quicklisp for easier Common Lisp package management
 #RUN curl -o /tmp/quicklisp.lisp https://beta.quicklisp.org/quicklisp.lisp && \
@@ -55,6 +81,7 @@ RUN tar jxf ${ALLEGRO_CL_FILE} -C /usr/local && \
 #         --eval '(ql:add-to-init-file)' \
 #         --eval '(quit)' && \
 #    rm /tmp/quicklisp.lisp
+ENV DISPLAY=:1
 
 # Set working directory
 WORKDIR /app
@@ -70,7 +97,7 @@ COPY "/out/artifacts/internal_server_jar/internal-server.jar" "/app/internal-ser
 
 COPY "/out/artifacts/jung_jar/jung-1.7.6.jar" "/app/sneps/SnepsGUI/SnepsGUIMods/JungFiles/JUNG/jung-1.7.6/jung-1.7.6.jar"
 
-#COPY "/out/artifacts/SNePSGUIClient_jar/SNePSGUIClient.jar" "/usr/local/acl10.1express.64/jlinker/jlinker.jar"
+COPY "/out/artifacts/new_jlinker_jar/jlinker.jar" "/usr/local/acl10.1express.64/jlinker/jlinker.jar"
 
 #COPY "/out/artifacts/jlinker_jar/jlinker.jar" "/app/sneps/Jlinker/jlinker.jar"
 
@@ -89,5 +116,7 @@ COPY "/Sneps-2.7.0/sneps/fns/dd.lisp" "/app/sneps/sneps/fns/dd.lisp"
 # Expose any necessary ports (optional)
 EXPOSE 7000
 
+EXPOSE 5900
+
 # Set the command to run when starting the container
-CMD service dbus start; /usr/lib/systemd/systemd-logind & service lightdm start; java -jar internal-server.jar; alisp -I /app/sneps/load-sneps.lisp
+CMD /usr/local/bin/start-vnc.sh; java -jar internal-server.jar
