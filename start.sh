@@ -1,0 +1,1 @@
+alisp -q  -L /app/sneps/load-sneps.lisp

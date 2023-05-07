@@ -16,7 +16,7 @@ public class SNePSMain {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        com.franz.jlinker.JavaLinkDist.advertise(5061,-1);
+        com.franz.jlinker.JavaLinkDist.advertise(42559,-1);
         System.out.println("I'm here!");
         // TODO code application logic here
     }

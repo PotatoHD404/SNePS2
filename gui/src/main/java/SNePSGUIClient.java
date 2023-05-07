@@ -16,6 +16,7 @@ public class SNePSGUIClient {
     public static SNePSGUIShow gui = new SNePSGUIShow(false);
 
     public static void main(String[] args) {
+        System.out.println("Starting GUI...");
         gui.setVisible(true);
         gui.addWindowListener(new WindowAdapter() {
             @Override
@@ -28,10 +29,12 @@ public class SNePSGUIClient {
             String url = "http://localhost:7000/snepslog";
             String filePath = "main.snlog";
 
+            System.out.println("Reading file content...");
             // Read file content
             Path path = Paths.get(filePath);
             byte[] fileContent = Files.readAllBytes(path);
 
+            System.out.println("Creating HttpURLConnection...");
             // Create HttpURLConnection
             URL urlObject = new URL(url);
             HttpURLConnection connection = (HttpURLConnection) urlObject.openConnection();
@@ -39,6 +42,7 @@ public class SNePSGUIClient {
             connection.setDoOutput(true);
             connection.setRequestProperty("Content-Type", "text/plain");
 
+            System.out.println("Sending request...");
             // Send request
             try (OutputStream os = connection.getOutputStream()) {
                 os.write(fileContent);
@@ -47,9 +51,11 @@ public class SNePSGUIClient {
 
             // Get response
             int responseCode = connection.getResponseCode();
+            System.out.println("Response code: " + responseCode);
 
             // Check if the response has a successful status
             if (responseCode == 200) {
+                System.out.println("Deserializing response...");
                 // Deserialize response into SparseGraph
                 ByteArrayOutputStream output = new ByteArrayOutputStream();
                 InputStream inputStream = connection.getInputStream();

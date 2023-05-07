@@ -120,9 +120,9 @@
 ;;(setf javatools.jlinker:*jlinker-error-p* t)            ;; default is nil
 ;; 
 ;;(setf javatools.jlinker:*jlinker-verbose* t)            ;; default is nil
-;;(setf javatools.jlinker:*jlinker-debug* t)              ;; default is nil
+(setf javatools.jlinker:*jlinker-debug* t)              ;; default is nil
 ;;(setf javatools.jlinker:*jlinker-retry-number* 3)       ;; default is 3
-;;(setf javatools.jlinker:*jlinker-retry-delay*  5)       ;; default is 5
+(setf javatools.jlinker:*jlinker-retry-delay*  15)       ;; default is 5
 
 
 ;; The following variable is used only in Unix implementations.

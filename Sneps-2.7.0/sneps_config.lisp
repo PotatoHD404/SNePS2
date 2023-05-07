@@ -7,7 +7,7 @@
  ;; the source version of SNePS, this is the directory that contains 
  ;; load-sneps.lisp. This variable must be specified.
  
- *sneps-directory* "C:\\app\\sneps"
+ *sneps-directory* "/app/sneps"
 
  ;; *use-gui-show* specifies whether to use the GUI version of show or the dot 
  ;; version of show. A value of 't' specifies the GUI, while 'nil' specifies 
@@ -16,7 +16,8 @@
  ;; which asks the user to point jlinker to the java home directory. Java
  ;; version 1.5 or greater is needed to run the GUI.
  
- *use-gui-show* t
+  *use-gui-show* t
+ ;; *use-gui-show* nil
 
 
  ;; *jung-directory* specifies the directory containing the jung-1.7.6.jar
@@ -26,7 +27,7 @@
  ;; system's CLASSPATH environment variable is set up to include the directory 
  ;; already.
 
- *jung-directory* "C:\\app\\sneps\\SnepsGUI\\SnepsGUIMods\\JungFiles\\Jung"
+ *jung-directory* "/app/sneps/SnepsGUI/SnepsGUIMods/JungFiles/JUNG/jung-1.7.6"
 
 
  ;; *colt-directory* specifies the directory containing the colt.jar and
@@ -35,7 +36,7 @@
  ;; system's CLASSPATH environment variable is set up to include the directory 
  ;; already.
 
- *colt-directory* "C:\\app\\sneps\\SnepsGUI\\SnepsGUIMods\\JungFiles\\Colt"
+ *colt-directory* "/app/sneps/SnepsGUI/SnepsGUIMods/JungFiles/Colt/lib"
 
 
  ;; *xerces-directory* specifies the directory containing the resolver.jar,
@@ -45,7 +46,7 @@
  ;; system's CLASSPATH environment variable is set up to include the directory 
  ;; already.
 
- *xerces-directory* "C:\\app\\sneps\\SnepsGUI\\SnepsGUIMods\\JungFiles\\Xerces"
+ *xerces-directory* "/app/sneps/SnepsGUI/SnepsGUIMods/JungFiles/Xerces"
 
  ;; *commons-directory* specifies the directory containing the 
  ;; commons-collections-3.2.jar and commons-collections-testframework-3.2.jar 
@@ -55,7 +56,7 @@
  ;; system's CLASSPATH environment variable is set up to include the directory 
  ;; already.
 
- *commons-directory* "C:\\app\\sneps\\SnepsGUI\\SnepsGUIMods\\JungFiles\\Commons"
+ *commons-directory* "/app/sneps/SnepsGUI/SnepsGUIMods/JungFiles/Commons"
 
  ;; *jimi-directory* specifies the directory containing the jimi-1.0.jar
  ;; file, which is part of the JIMI software package. 
@@ -64,7 +65,7 @@
  ;; system's CLASSPATH environment variable is set up to include the directory 
  ;; already.
 
- *jimi-directory* "C:\\app\\sneps\\SnepsGUI\\SnepsGUIMods\\JungFiles\\Jimi"
+ *jimi-directory* "/app/sneps/SnepsGUI/SnepsGUIMods/JungFiles/Jimi"
 
  ;; *eps-dump-directory* specifies the directory containing the dump.jar
  ;; file, which is part of the EPSDump software package. 
@@ -72,7 +73,7 @@
  ;; if your system does not have the package, setting this path to 'nil'
  ;; will prevent the system from expecting the package.
 
- *eps-dump-directory* "C:\\app\\sneps\\SnepsGUI\\SnepsGUIMods\\JungFiles\\EpsDump"
+ *eps-dump-directory* "/app/sneps/SnepsGUI/SnepsGUIMods/EPSComponentDump"
 
  ;; *force-jlinker-config*: On windows paltforms jlinker attempts to configure
  ;; itself by inspecting the Windows registery. This should be sufficient for
@@ -91,6 +92,7 @@
  ;; Defaults to ".lisp". This is not needed by the SNePS executeable.
  ;;
  ;; *sneps-default-lisp-extension* "lisp"
+ *sneps-lisp-extension* "lisp"
 
  ;; *sneps-binary-extension* specifies the compiled extension for lisp files. 
  ;; Defaults  based on current lisp implementation running. Not required by 
@@ -106,20 +108,20 @@
  ;; *sneps-verbose* specifies verbose loading of SNePS files
  ;; Default to 'nil'
  ;;
- ;; *sneps-verbose* nil
+ *sneps-verbose* nil
  
  ;; *sneps-load-old-englex*: If this is T the old englex package is loaded 
  ;; instead of Chris Lusardi's new implementation (for compatibility with old 
  ;; stuff). Not needed by the SNePS executable
  ;;
- ;; *sneps-load-old-englex* nil
+ *sneps-load-old-englex* nil
  
  ;; *sneps-user-translations*: List of user supplied logical pathname 
  ;; translations.
  ;; Changing the value of this variable after this file was loaded
  ;; will not have any effect."
  ;;
- ;; *sneps-user-translations* nil
+ *sneps-user-translations* nil
 
  ;; *sneps-use-lpmk*: If non-NIL Mark Kantrowitz's logical pathnames package 
  ;; is used. This should only be non-NIL if there is no native implementation 
@@ -138,13 +140,16 @@
  ;; executeable.
  ;;
  ;; *sneps-use-lpmk* (not (fboundp 'translate-logical-pathname))
+ *sneps-use-lpmk* nil
 
  ;; *sneps-debug*: Set 'nil' for compiled code that is faster, but harder to 
  ;; debug. Set 't' for compiled code that is easier to debug, but slower.
  ;; Not needed by the SNePS executeable
  ;;
- ;;*sneps-debug* nil
+ *sneps-debug* t
 
 )
-(load "snepslog-helper.lisp")
-(snepslog-helper:run-demo)
+
+
+;; (load "/app/sneps/snepslog-helper.lisp")
+;; (snepslog-helper:run-demo)
