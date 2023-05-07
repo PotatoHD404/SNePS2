@@ -547,10 +547,13 @@ the api is to connect to, starts the JavaSnepsAPI"
      (rest :usage "This is a test" :long-abbrev t)
      (when (and api-port api-classpath)
        (snepslog:init-java-sneps-connection
-	(read-from-string api-port) api-classpath)))))
+	(read-from-string 7001) api-classpath)))))
 
-#+allegro
-(check-and-start-java-sneps-api)
+;; #+allegro
+;; (check-and-start-java-sneps-api)
+
+;; #+allegro
+;; (check-and-start-java-sneps-api)
 
 
 ;;; Only needed for the exe, which is allegro only
@@ -574,10 +577,6 @@ the api is to connect to, starts the JavaSnepsAPI"
 ;; (format t "~&~a loaded.~
 ;;           ~%Type `(sneps)' or `(snepslog)' to get started."
 ;;	*sneps-version*)
-
-
-(load "/app/sneps/snepslog-helper.lisp")
-(snepslog-helper:run-demo)
 
     
 

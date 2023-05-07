@@ -9,6 +9,7 @@
         <module>jung</module>
         <module>api</module>
         <module>internal-server</module>
+        <module>jlinker</module>
     </modules>
     <groupId>potatohd.sneps.gui</groupId>
     <artifactId>sneps-test</artifactId>

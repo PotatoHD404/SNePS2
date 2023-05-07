@@ -7,17 +7,34 @@ ENV DEBIAN_FRONTEND=noninteractive \
 
 # Install Common Lisp (SBCL), Java 11, and other necessary tools
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         build-essential \
         curl \
         wget \
         libncurses-dev \
+        graphviz \
+        snapd \
         libc6-dev \
         git \
-#     Install Common Lisp (SBCL) here
+        ubuntu-desktop \
+        lightdm \
         openjdk-11-jdk-headless \
         rlwrap \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+
+RUN rm /run/reboot-required*
+RUN echo "/usr/sbin/lightdm" > /etc/X11/default-display-manager
+RUN echo "\
+[LightDM]\n\
+[Seat:*]\n\
+type=xremote\n\
+xserver-hostname=host.docker.internal\n\
+xserver-display-number=0\n\
+autologin-user=root\n\
+autologin-user-timeout=0\n\
+" > /etc/lightdm/lightdm.conf.d/lightdm.conf
+
+ENV DISPLAY=host.docker.internal:0.0
 
 # Set environment variables
 ENV ALLEGRO_CL_VERSION 10.1
@@ -53,7 +70,11 @@ COPY "/out/artifacts/internal_server_jar/internal-server.jar" "/app/internal-ser
 
 COPY "/out/artifacts/jung_jar/jung-1.7.6.jar" "/app/sneps/SnepsGUI/SnepsGUIMods/JungFiles/JUNG/jung-1.7.6/jung-1.7.6.jar"
 
-COPY "/out/artifacts/SNePSGUIShow_jar/SNePSGUIShow.jar" "/app/sneps/SnepsGUI/SNePSGUIShow.jar"
+#COPY "/out/artifacts/SNePSGUIClient_jar/SNePSGUIClient.jar" "/usr/local/acl10.1express.64/jlinker/jlinker.jar"
+
+#COPY "/out/artifacts/jlinker_jar/jlinker.jar" "/app/sneps/Jlinker/jlinker.jar"
+
+COPY "/out/artifacts/SNePSGUIShow_jar/SNePSGUIShow.jar" "/app/sneps/SnepsGUI/SnepsGUIShow.jar"
 
 COPY "/Sneps-2.7.0/load-sneps.lisp" "/app/sneps/load-sneps.lisp"
 
@@ -63,8 +84,10 @@ COPY "/Sneps-2.7.0/snepslog-helper.lisp" "/app/sneps/snepslog-helper.lisp"
 
 COPY "/Sneps-2.7.0/Jlinker/jl-config.cl" "/app/sneps/Jlinker/jl-config.cl"
 
+COPY "/Sneps-2.7.0/sneps/fns/dd.lisp" "/app/sneps/sneps/fns/dd.lisp"
+
 # Expose any necessary ports (optional)
 EXPOSE 7000
 
 # Set the command to run when starting the container
-CMD ["java", "-jar", "internal-server.jar"]
+CMD service dbus start; /usr/lib/systemd/systemd-logind & service lightdm start; java -jar internal-server.jar; alisp -I /app/sneps/load-sneps.lisp
